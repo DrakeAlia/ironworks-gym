@@ -19,7 +19,7 @@ export default function Navigation() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-zinc-950/95 backdrop-blur-sm border-b border-amber-500/20">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-zinc-950/95 backdrop-blur-sm border-b border-yellow-500/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -48,15 +48,15 @@ export default function Navigation() {
                   href={link.href}
                   className={`relative px-3 py-2 text-sm font-medium transition-colors ${
                     isActive
-                      ? "text-amber-500"
-                      : "text-zinc-300 hover:text-amber-400"
+                      ? "text-yellow-500"
+                      : "text-zinc-300 hover:text-yellow-400"
                   }`}
                 >
                   {link.label}
                   {isActive && (
                     <motion.div
                       layoutId="activeTab"
-                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-amber-500"
+                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-yellow-500"
                       initial={false}
                       transition={{ type: "spring", stiffness: 500, damping: 30 }}
                     />
@@ -66,7 +66,7 @@ export default function Navigation() {
             })}
             <Link
               href="/membership"
-              className="px-6 py-2.5 bg-amber-500 text-zinc-950 font-semibold rounded-lg hover:bg-amber-400 transition-colors"
+              className="px-6 py-2.5 bg-yellow-500 text-zinc-950 font-semibold rounded-lg hover:bg-yellow-400 transition-all duration-300 hover:shadow-lg hover:shadow-yellow-500/25"
             >
               Join Now
             </Link>
@@ -75,7 +75,7 @@ export default function Navigation() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 text-zinc-300 hover:text-amber-500 transition-colors"
+            className="md:hidden p-2 text-zinc-300 hover:text-yellow-500 transition-colors"
             aria-label="Toggle menu"
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -90,7 +90,7 @@ export default function Navigation() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden border-t border-amber-500/20 bg-zinc-950"
+            className="md:hidden border-t border-yellow-500/20 bg-zinc-950"
           >
             <div className="px-4 py-4 space-y-2">
               {navLinks.map((link) => {
@@ -102,8 +102,8 @@ export default function Navigation() {
                     onClick={() => setIsOpen(false)}
                     className={`block px-4 py-3 rounded-lg font-medium transition-colors ${
                       isActive
-                        ? "text-amber-500 bg-amber-500/10"
-                        : "text-zinc-300 hover:text-amber-400 hover:bg-zinc-900"
+                        ? "text-yellow-500 bg-yellow-500/10"
+                        : "text-zinc-300 hover:text-yellow-400 hover:bg-zinc-900"
                     }`}
                   >
                     {link.label}
@@ -113,7 +113,7 @@ export default function Navigation() {
               <Link
                 href="/membership"
                 onClick={() => setIsOpen(false)}
-                className="block px-4 py-3 bg-amber-500 text-zinc-950 font-semibold rounded-lg text-center hover:bg-amber-400 transition-colors"
+                className="block px-4 py-3 bg-yellow-500 text-zinc-950 font-semibold rounded-lg text-center hover:bg-yellow-400 transition-all duration-300 hover:shadow-lg hover:shadow-yellow-500/25"
               >
                 Join Now
               </Link>

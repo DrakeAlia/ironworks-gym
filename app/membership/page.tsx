@@ -103,18 +103,18 @@ export default function Membership() {
           />
         </div>
         <div className="absolute inset-0 bg-zinc-950/80" />
-        <div className="absolute inset-0 bg-gradient-to-b from-amber-500/20 via-transparent to-zinc-950" />
+        <div className="absolute inset-0 bg-gradient-to-b from-yellow-500/20 via-transparent to-zinc-950" />
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <p className="text-amber-500 font-semibold uppercase tracking-[0.3em] mb-4">
+            <p className="text-yellow-500 font-semibold uppercase tracking-[0.3em] mb-4">
               Since 1974
             </p>
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Membership <span className="text-amber-500">Plans</span>
+              Membership <span className="text-yellow-500">Plans</span>
             </h1>
             <p className="text-2xl text-white font-semibold mb-4">
               “The Gym That's Not A Health Club”
@@ -137,7 +137,7 @@ export default function Membership() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Inside the <span className="text-amber-500">Forge</span>
+              Inside the <span className="text-yellow-500">Forge</span>
             </h2>
             <p className="text-xl text-zinc-400 max-w-3xl mx-auto">
               Tour the spaces that make Iron Works Gym a Bellevue staple—from dumbbell rows to the suspension zone.
@@ -153,7 +153,7 @@ export default function Membership() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-amber-500/20 bg-zinc-900">
+                <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-yellow-500/20 bg-zinc-900">
                   <Image
                     src={image.src}
                     alt={image.alt}
@@ -163,7 +163,7 @@ export default function Membership() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent" />
                   <div className="absolute bottom-4 left-4 right-4">
-                    <p className="text-sm font-semibold text-amber-400 tracking-wide uppercase">
+                    <p className="text-sm font-semibold text-yellow-400 tracking-wide uppercase">
                       {image.label}
                     </p>
                   </div>
@@ -184,20 +184,20 @@ export default function Membership() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-zinc-900 border border-amber-500/30 rounded-2xl p-8 shadow-xl shadow-amber-500/10"
+              className="bg-zinc-900 border border-yellow-500/30 rounded-2xl p-8 shadow-xl shadow-yellow-500/10"
             >
-              <p className="text-xs uppercase tracking-[0.3em] text-amber-400 mb-3">
+              <p className="text-xs uppercase tracking-[0.3em] text-yellow-400 mb-3">
                 {premiumPlan.subtitle}
               </p>
               <h3 className="text-3xl font-bold text-white mb-2">{premiumPlan.title}</h3>
-              <p className="text-5xl font-extrabold text-amber-400 mb-6">{premiumPlan.price}</p>
+              <p className="text-5xl font-extrabold text-yellow-400 mb-6">{premiumPlan.price}</p>
               <p className="text-zinc-400 text-sm mb-6">
                 Monthly dues per member. Family add-on specials available at point of sale.
               </p>
               <ul className="space-y-4">
                 {premiumPlan.bullets.map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm text-zinc-300">
-                    <Check className="h-5 w-5 text-amber-500 flex-shrink-0 mt-0.5" />
+                    <Check className="h-5 w-5 text-yellow-500 flex-shrink-0 mt-0.5" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -210,13 +210,13 @@ export default function Membership() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="bg-zinc-900 border border-amber-500/20 rounded-2xl p-8"
+              className="bg-zinc-900 border border-yellow-500/20 rounded-2xl p-8"
             >
-              <p className="text-xs uppercase tracking-[0.3em] text-amber-400 mb-3">
+              <p className="text-xs uppercase tracking-[0.3em] text-yellow-400 mb-3">
                 Term Memberships / Gym
               </p>
               <h3 className="text-3xl font-bold text-white mb-6">Short & Long Terms</h3>
-              <ul className="divide-y divide-amber-500/10">
+              <ul className="divide-y divide-yellow-500/10">
                 {termMemberships.map((term) => (
                   <li key={term.label} className="flex items-center justify-between py-3">
                     <span className="text-zinc-300">{term.label}</span>
@@ -224,7 +224,7 @@ export default function Membership() {
                   </li>
                 ))}
               </ul>
-              <div className="mt-6 space-y-2 text-sm text-amber-400">
+              <div className="mt-6 space-y-2 text-sm text-yellow-400">
                 {termNotes.map((note) => (
                   <p key={note}>{note}</p>
                 ))}
@@ -237,18 +237,18 @@ export default function Membership() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-zinc-900 border border-amber-500/20 rounded-2xl p-8"
+              className="bg-zinc-900 border border-yellow-500/20 rounded-2xl p-8"
             >
-              <p className="text-xs uppercase tracking-[0.3em] text-amber-400 mb-3">
+              <p className="text-xs uppercase tracking-[0.3em] text-yellow-400 mb-3">
                 Corporate Memberships
               </p>
               <h3 className="text-3xl font-bold text-white mb-2">Team Training</h3>
               <p className="text-zinc-400 text-sm mb-4">{corporatePlan.description}</p>
-              <p className="text-4xl font-bold text-amber-400 mb-6">{corporatePlan.price}</p>
+              <p className="text-4xl font-bold text-yellow-400 mb-6">{corporatePlan.price}</p>
               <ul className="space-y-4">
                 {corporatePlan.bullets.map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm text-zinc-300">
-                    <Check className="h-5 w-5 text-amber-500 flex-shrink-0 mt-0.5" />
+                    <Check className="h-5 w-5 text-yellow-500 flex-shrink-0 mt-0.5" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -269,26 +269,26 @@ export default function Membership() {
             className="text-center mb-12"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              What's <span className="text-amber-500">Included</span>
+              What's <span className="text-yellow-500">Included</span>
             </h2>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-zinc-950 border border-amber-500/20 rounded-lg p-6 text-center">
-              <Dumbbell className="h-12 w-12 text-amber-500 mx-auto mb-4" />
+            <div className="bg-zinc-950 border border-yellow-500/20 rounded-lg p-6 text-center">
+              <Dumbbell className="h-12 w-12 text-yellow-500 mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-2">Premium Equipment</h3>
               <p className="text-zinc-400 text-sm">
                 Access to our full range of strength training equipment
               </p>
             </div>
-            <div className="bg-zinc-950 border border-amber-500/20 rounded-lg p-6 text-center">
-              <Users className="h-12 w-12 text-amber-500 mx-auto mb-4" />
+            <div className="bg-zinc-950 border border-yellow-500/20 rounded-lg p-6 text-center">
+              <Users className="h-12 w-12 text-yellow-500 mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-2">Expert Community</h3>
               <p className="text-zinc-400 text-sm">
                 Train alongside dedicated athletes and fitness enthusiasts
               </p>
             </div>
-            <div className="bg-zinc-950 border border-amber-500/20 rounded-lg p-6 text-center">
-              <Award className="h-12 w-12 text-amber-500 mx-auto mb-4" />
+            <div className="bg-zinc-950 border border-yellow-500/20 rounded-lg p-6 text-center">
+              <Award className="h-12 w-12 text-yellow-500 mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-2">Proven Results</h3>
               <p className="text-zinc-400 text-sm">
                 Join thousands who have achieved their fitness goals
@@ -309,7 +309,7 @@ export default function Membership() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Membership <span className="text-amber-500">Policies</span>
+              Membership <span className="text-yellow-500">Policies</span>
             </h2>
             <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
               Important information about your membership and gym policies.
@@ -324,13 +324,13 @@ export default function Membership() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-zinc-900 border border-amber-500/20 rounded-lg p-6"
+                className="bg-zinc-900 border border-yellow-500/20 rounded-lg p-6"
               >
-                <h3 className="text-2xl font-semibold mb-4 text-amber-500">{policy.title}</h3>
+                <h3 className="text-2xl font-semibold mb-4 text-yellow-500">{policy.title}</h3>
                 <ul className="space-y-3">
                   {policy.content.map((item, idx) => (
                     <li key={idx} className="flex items-start">
-                      <Clock className="h-5 w-5 text-amber-500/50 mr-3 flex-shrink-0 mt-0.5" />
+                      <Clock className="h-5 w-5 text-yellow-500/50 mr-3 flex-shrink-0 mt-0.5" />
                       <span className="text-zinc-300 text-sm leading-relaxed">{item}</span>
                     </li>
                   ))}
@@ -349,17 +349,17 @@ export default function Membership() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-gradient-to-r from-amber-500/20 to-orange-500/20 border-2 border-amber-500 rounded-2xl p-12 text-center"
+            className="bg-gradient-to-r from-yellow-500/20 to-yellow-600/20 border-2 border-yellow-500 rounded-2xl p-12 text-center"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Ready to <span className="text-amber-500">Start</span>?
+              Ready to <span className="text-yellow-500">Start</span>?
             </h2>
             <p className="text-xl text-zinc-300 mb-8 max-w-2xl mx-auto">
               Visit 12708 Northup Way for a free tour or call us to lock in your spot. No pressure, just real training info.
             </p>
             <Link
               href="#"
-              className="inline-flex items-center justify-center px-8 py-4 bg-amber-500 text-zinc-950 font-semibold rounded-lg hover:bg-amber-400 transition-colors text-lg"
+              className="inline-flex items-center justify-center px-8 py-4 bg-yellow-500 text-zinc-950 font-semibold rounded-lg hover:bg-yellow-400 transition-all duration-300 hover:shadow-lg hover:shadow-yellow-500/25 text-lg"
             >
               Schedule a Tour
               <ArrowRight className="ml-2 h-5 w-5" />
@@ -367,47 +367,6 @@ export default function Membership() {
             <p className="text-zinc-400 text-sm mt-6">
               Prefer to talk? Call (425) 883-6006 · Mon–Fri 5 AM–9 PM · Sat 7 AM–6 PM · Sun 10 AM–4 PM
             </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-zinc-900/60">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
-          >
-            <div className="bg-zinc-950 border border-amber-500/20 rounded-xl p-6">
-              <MapPin className="h-8 w-8 text-amber-500 mb-4" />
-              <h3 className="text-amber-500 font-semibold mb-2">Visit Us</h3>
-              <p className="text-zinc-300">
-                12708 Northup Way
-                <br />
-                Bellevue, WA 98005
-              </p>
-            </div>
-            <div className="bg-zinc-950 border border-amber-500/20 rounded-xl p-6">
-              <Phone className="h-8 w-8 text-amber-500 mb-4" />
-              <h3 className="text-amber-500 font-semibold mb-2">Call Us</h3>
-              <p className="text-zinc-300 text-lg font-semibold">
-                (425) 883-6006
-              </p>
-            </div>
-            <div className="bg-zinc-950 border border-amber-500/20 rounded-xl p-6">
-              <Clock className="h-8 w-8 text-amber-500 mb-4" />
-              <h3 className="text-amber-500 font-semibold mb-2">Hours</h3>
-              <p className="text-zinc-300 text-sm leading-relaxed">
-                Mon–Fri: 5 AM – 9 PM
-                <br />
-                Sat: 7 AM – 6 PM
-                <br />
-                Sun: 10 AM – 4 PM
-              </p>
-            </div>
           </motion.div>
         </div>
       </section>

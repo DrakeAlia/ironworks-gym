@@ -4,7 +4,7 @@ import { Mail, Phone, MapPin, Facebook, Instagram, Twitter } from "lucide-react"
 
 export default function Footer() {
   return (
-    <footer className="bg-zinc-950 border-t border-amber-500/20">
+    <footer className="bg-zinc-950 border-t border-yellow-500/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
@@ -25,21 +25,21 @@ export default function Footer() {
             <div className="flex space-x-4">
               <a
                 href="#"
-                className="text-zinc-400 hover:text-amber-500 transition-colors"
+                className="text-zinc-400 hover:text-yellow-500 transition-colors"
                 aria-label="Facebook"
               >
                 <Facebook className="h-5 w-5" />
               </a>
               <a
                 href="#"
-                className="text-zinc-400 hover:text-amber-500 transition-colors"
+                className="text-zinc-400 hover:text-yellow-500 transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram className="h-5 w-5" />
               </a>
               <a
                 href="#"
-                className="text-zinc-400 hover:text-amber-500 transition-colors"
+                className="text-zinc-400 hover:text-yellow-500 transition-colors"
                 aria-label="Twitter"
               >
                 <Twitter className="h-5 w-5" />
@@ -52,22 +52,22 @@ export default function Footer() {
             <h3 className="text-white font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/" className="text-zinc-400 hover:text-amber-500 transition-colors text-sm">
+                <Link href="/" className="text-zinc-400 hover:text-yellow-500 transition-colors text-sm">
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="text-zinc-400 hover:text-amber-500 transition-colors text-sm">
+                <Link href="/about" className="text-zinc-400 hover:text-yellow-500 transition-colors text-sm">
                   About
                 </Link>
               </li>
               <li>
-                <Link href="/trainers" className="text-zinc-400 hover:text-amber-500 transition-colors text-sm">
+                <Link href="/trainers" className="text-zinc-400 hover:text-yellow-500 transition-colors text-sm">
                   Trainers
                 </Link>
               </li>
               <li>
-                <Link href="/membership" className="text-zinc-400 hover:text-amber-500 transition-colors text-sm">
+                <Link href="/membership" className="text-zinc-400 hover:text-yellow-500 transition-colors text-sm">
                   Membership
                 </Link>
               </li>
@@ -79,21 +79,21 @@ export default function Footer() {
             <h3 className="text-white font-semibold mb-4">Contact</h3>
             <ul className="space-y-3">
               <li className="flex items-start space-x-3">
-                <MapPin className="h-5 w-5 text-amber-500 mt-0.5 flex-shrink-0" />
+                <MapPin className="h-5 w-5 text-yellow-500 mt-0.5 flex-shrink-0" />
                 <span className="text-zinc-400 text-sm">
                   12708 Northup Way<br />
                   Bellevue, WA 98005
                 </span>
               </li>
               <li className="flex items-center space-x-3">
-                <Phone className="h-5 w-5 text-amber-500 flex-shrink-0" />
-                <a href="tel:+14258836006" className="text-zinc-400 hover:text-amber-500 transition-colors text-sm">
+                <Phone className="h-5 w-5 text-yellow-500 flex-shrink-0" />
+                <a href="tel:+14258836006" className="text-zinc-400 hover:text-yellow-500 transition-colors text-sm">
                   (425) 883-6006
                 </a>
               </li>
               <li className="flex items-center space-x-3">
-                <Mail className="h-5 w-5 text-amber-500 flex-shrink-0" />
-                <a href="mailto:info@ironworksgym.com" className="text-zinc-400 hover:text-amber-500 transition-colors text-sm">
+                <Mail className="h-5 w-5 text-yellow-500 flex-shrink-0" />
+                <a href="mailto:info@ironworksgym.com" className="text-zinc-400 hover:text-yellow-500 transition-colors text-sm">
                   info@ironworksgym.com
                 </a>
               </li>
@@ -111,7 +111,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 pt-8 border-t border-amber-500/20">
+        <div className="mt-8 pt-8 border-t border-yellow-500/20">
           <p className="text-center text-zinc-500 text-sm">
             © {new Date().getFullYear()} Iron Works Gym. All rights reserved.
           </p>

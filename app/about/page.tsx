@@ -87,18 +87,18 @@ export default function About() {
     <div className="bg-zinc-950">
       {/* Hero Section */}
       <section className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-amber-500/10 via-transparent to-zinc-950" />
+        <div className="absolute inset-0 bg-gradient-to-b from-yellow-500/10 via-transparent to-zinc-950" />
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <p className="text-amber-500 font-semibold uppercase tracking-[0.3em] mb-4">
+            <p className="text-yellow-500 font-semibold uppercase tracking-[0.3em] mb-4">
               Since 1974
             </p>
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">
-              About <span className="text-amber-500">Us</span>
+              About <span className="text-yellow-500">Us</span>
             </h1>
             <p className="text-xl text-zinc-300 max-w-2xl mx-auto">
               Iron Works Gym is the Eastside&apos;s original hardcore training
@@ -110,7 +110,7 @@ export default function About() {
       </section>
 
       {/* Gallery Row */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
+      <section className="py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {galleryImages.map((image, index) => (
@@ -121,7 +121,7 @@ export default function About() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ scale: 1.05 }}
-                className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-amber-500/20 cursor-pointer transition-all duration-300"
+                className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-yellow-500/20 cursor-pointer transition-all duration-300"
               >
                 <Image
                   src={image.src}
@@ -204,7 +204,7 @@ export default function About() {
             <CarouselContent className="-ml-0">
               {carouselImages.map((image, index) => (
                 <CarouselItem key={index} className="pl-0 basis-full">
-                  <div className="relative w-full aspect-[16/9] rounded-3xl overflow-hidden border border-amber-500/20 bg-zinc-900">
+                  <div className="relative w-full aspect-[16/9] rounded-3xl overflow-hidden border border-yellow-500/20 bg-zinc-900">
                     <Image
                       src={image.src}
                       alt={image.alt}
@@ -218,8 +218,8 @@ export default function About() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="!left-4 bg-zinc-950/70 text-white hover:text-amber-400 border-amber-500/20 hover:border-amber-500/40 z-10" />
-            <CarouselNext className="!right-4 bg-zinc-950/70 text-white hover:text-amber-400 border-amber-500/20 hover:border-amber-500/40 z-10" />
+            <CarouselPrevious className="!left-4 bg-zinc-950/70 text-white hover:text-yellow-400 border-yellow-500/20 hover:border-yellow-500/60 z-10 transition-all duration-300" />
+            <CarouselNext className="!right-4 bg-zinc-950/70 text-white hover:text-yellow-400 border-yellow-500/20 hover:border-yellow-500/60 z-10 transition-all duration-300" />
           </Carousel>
           {/* Dot Indicators */}
           <div className="flex justify-center items-center gap-2 mt-6">
@@ -229,7 +229,7 @@ export default function About() {
                 onClick={() => api?.scrollTo(index)}
                 className={`h-2 w-2 rounded-full transition-all duration-300 ${
                   current === index
-                    ? "bg-amber-500 w-8"
+                    ? "bg-yellow-500 w-8"
                     : "bg-zinc-600 hover:bg-zinc-500"
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
@@ -263,7 +263,7 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="bg-gradient-to-r from-amber-500/10 to-orange-500/10 border border-amber-500/30 rounded-3xl p-10"
+            className="bg-gradient-to-r from-yellow-500/10 to-yellow-600/10 border border-yellow-500/30 rounded-3xl p-10"
           >
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {/* Photo Placeholder */}
@@ -272,13 +272,13 @@ export default function About() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="flex items-center justify-center bg-amber-500/20 rounded-2xl border border-amber-500/30 p-12"
+                className="flex items-center justify-center bg-yellow-500/20 rounded-2xl border border-yellow-500/30 p-12"
               >
-                <User className="h-24 w-24 text-amber-500/60" />
+                <User className="h-24 w-24 text-yellow-500/60" />
               </motion.div>
               {/* Text Content */}
               <div className="flex-1 space-y-3">
-                <p className="text-sm uppercase tracking-[0.3em] text-amber-400">
+                <p className="text-sm uppercase tracking-[0.3em] text-yellow-400">
                   Former Gym Owner
                 </p>
                 <h3 className="text-3xl font-bold text-white">Tim Ennis</h3>
@@ -323,14 +323,14 @@ export default function About() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
               <Button
                 asChild
-                className="bg-amber-500 text-zinc-950 hover:bg-amber-400 font-semibold px-8 py-6 text-lg"
+                className="bg-yellow-500 text-zinc-950 hover:bg-yellow-400 font-semibold px-8 py-6 text-lg transition-all duration-300 hover:shadow-lg hover:shadow-yellow-500/25"
               >
                 <Link href="/membership">View Membership</Link>
               </Button>
               <Button
                 asChild
                 variant="outline"
-                className="border-amber-500/50 text-amber-500 hover:bg-amber-500/10 hover:border-amber-500 font-semibold px-8 py-6 text-lg"
+                className="border-yellow-500/50 text-yellow-500 hover:bg-yellow-500/10 hover:border-yellow-500 font-semibold px-8 py-6 text-lg"
               >
                 <Link href="/trainers">Meet Our Trainers</Link>
               </Button>
