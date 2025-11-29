@@ -25,7 +25,7 @@ export default function Navigation() {
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center space-x-2 group"
+            className="flex items-center space-x-2 group min-h-[44px] min-w-[44px]"
             aria-label="Iron Works Gym home"
           >
             <Image
@@ -34,7 +34,7 @@ export default function Navigation() {
               width={170}
               height={48}
               priority
-              className="w-auto h-10 object-contain drop-shadow-[0_4px_12px_rgba(0,0,0,0.45)] group-hover:scale-[1.02] transition-transform"
+              className="w-auto h-8 sm:h-10 object-contain drop-shadow-[0_4px_12px_rgba(0,0,0,0.45)] group-hover:scale-[1.02] transition-transform"
             />
           </Link>
 
@@ -66,7 +66,7 @@ export default function Navigation() {
             })}
             <Link
               href="/membership"
-              className="px-6 py-2.5 bg-yellow-500 text-zinc-950 font-semibold rounded-lg hover:bg-yellow-400 transition-all duration-300 hover:shadow-lg hover:shadow-yellow-500/25"
+              className="px-6 py-2.5 bg-yellow-500 text-zinc-950 font-semibold rounded-lg hover:bg-yellow-400 transition-all duration-300 hover:shadow-lg hover:shadow-yellow-500/25 min-h-[44px] flex items-center"
             >
               Join Now
             </Link>
@@ -75,7 +75,7 @@ export default function Navigation() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 text-zinc-300 hover:text-yellow-500 transition-colors"
+            className="md:hidden p-3 text-zinc-300 hover:text-yellow-500 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
             aria-label="Toggle menu"
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -100,7 +100,7 @@ export default function Navigation() {
                     key={link.href}
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className={`block px-4 py-3 rounded-lg font-medium transition-colors ${
+                    className={`block px-4 py-3 rounded-lg font-medium transition-colors min-h-[44px] flex items-center ${
                       isActive
                         ? "text-yellow-500 bg-yellow-500/10"
                         : "text-zinc-300 hover:text-yellow-400 hover:bg-zinc-900"
@@ -113,7 +113,7 @@ export default function Navigation() {
               <Link
                 href="/membership"
                 onClick={() => setIsOpen(false)}
-                className="block px-4 py-3 bg-yellow-500 text-zinc-950 font-semibold rounded-lg text-center hover:bg-yellow-400 transition-all duration-300 hover:shadow-lg hover:shadow-yellow-500/25"
+                className="block px-4 py-3 bg-yellow-500 text-zinc-950 font-semibold rounded-lg text-center hover:bg-yellow-400 transition-all duration-300 hover:shadow-lg hover:shadow-yellow-500/25 min-h-[44px] flex items-center justify-center"
               >
                 Join Now
               </Link>

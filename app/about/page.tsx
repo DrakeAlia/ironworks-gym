@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { User } from "lucide-react";
 import {
   Carousel,
   CarouselContent,
@@ -97,10 +96,10 @@ export default function About() {
             <p className="text-yellow-500 font-semibold uppercase tracking-[0.3em] mb-4">
               Since 1974
             </p>
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 px-4">
               About <span className="text-yellow-500">Us</span>
             </h1>
-            <p className="text-xl text-zinc-300 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-zinc-300 max-w-2xl mx-auto px-4">
               Iron Works Gym is the Eastside&apos;s original hardcore training
               ground—rooted in community, forged in grit, and focused on real
               results.
@@ -218,8 +217,8 @@ export default function About() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="!left-4 bg-zinc-950/70 text-white hover:text-yellow-400 border-yellow-500/20 hover:border-yellow-500/60 z-10 transition-all duration-300" />
-            <CarouselNext className="!right-4 bg-zinc-950/70 text-white hover:text-yellow-400 border-yellow-500/20 hover:border-yellow-500/60 z-10 transition-all duration-300" />
+            <CarouselPrevious className="!left-2 sm:!left-4 bg-zinc-950/70 text-white hover:text-yellow-400 border-yellow-500/20 hover:border-yellow-500/60 z-10 transition-all duration-300 h-10 w-10 sm:h-12 sm:w-12" />
+            <CarouselNext className="!right-2 sm:!right-4 bg-zinc-950/70 text-white hover:text-yellow-400 border-yellow-500/20 hover:border-yellow-500/60 z-10 transition-all duration-300 h-10 w-10 sm:h-12 sm:w-12" />
           </Carousel>
           {/* Dot Indicators */}
           <div className="flex justify-center items-center gap-2 mt-6">
@@ -227,9 +226,9 @@ export default function About() {
               <button
                 key={index}
                 onClick={() => api?.scrollTo(index)}
-                className={`h-2 w-2 rounded-full transition-all duration-300 ${
+                className={`h-3 w-3 sm:h-2 sm:w-2 rounded-full transition-all duration-300 min-h-[44px] min-w-[44px] flex items-center justify-center ${
                   current === index
-                    ? "bg-yellow-500 w-8"
+                    ? "bg-yellow-500 sm:w-8"
                     : "bg-zinc-600 hover:bg-zinc-500"
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
@@ -249,10 +248,10 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 px-4">
               Tim Ennis Legacy
             </h2>
-            <p className="text-zinc-400 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg text-zinc-400 max-w-3xl mx-auto px-4">
               Honoring the former owner who shaped generations of athletes and
               set the tone for Iron Works Gym&apos;s future.
             </p>
@@ -263,25 +262,33 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="bg-gradient-to-r from-yellow-500/10 to-yellow-600/10 border border-yellow-500/30 rounded-3xl p-10"
+            className="bg-gradient-to-r from-yellow-500/10 to-yellow-600/10 border border-yellow-500/30 rounded-3xl p-6 sm:p-8 md:p-10"
           >
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {/* Photo Placeholder */}
+              {/* Photo */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="flex items-center justify-center bg-yellow-500/20 rounded-2xl border border-yellow-500/30 p-12"
+                className="relative aspect-[3/4] overflow-hidden rounded-2xl border border-yellow-500/30"
               >
-                <User className="h-24 w-24 text-yellow-500/60" />
+                <Image
+                  src="/images/trainers/Iron Works-tim.jpg"
+                  alt="Tim Ennis - Former Owner of Iron Works Gym"
+                  fill
+                  className="object-cover object-top"
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                />
               </motion.div>
               {/* Text Content */}
               <div className="flex-1 space-y-3">
                 <p className="text-sm uppercase tracking-[0.3em] text-yellow-400">
                   Former Gym Owner
                 </p>
-                <h3 className="text-3xl font-bold text-white">Tim Ennis</h3>
+                <h3 className="text-2xl sm:text-3xl font-bold text-white">
+                  Tim Ennis
+                </h3>
                 <p className="text-zinc-200 leading-relaxed">
                   Tim&apos;s journey in the fitness industry began in 1984, and
                   in 1994, he became the Owner &amp; President of Iron Works
@@ -314,23 +321,23 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="text-center space-y-6"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white px-4">
               Ready to Start Your Journey?
             </h2>
-            <p className="text-xl text-zinc-300 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-zinc-300 max-w-2xl mx-auto px-4">
               Visit us at 12708 Northup Way, Bellevue or call (425) 883-6006
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4 px-4">
               <Button
                 asChild
-                className="bg-yellow-500 text-zinc-950 hover:bg-yellow-400 font-semibold px-8 py-6 text-lg transition-all duration-300 hover:shadow-lg hover:shadow-yellow-500/25"
+                className="bg-yellow-500 text-zinc-950 hover:bg-yellow-400 font-semibold px-8 py-6 text-base sm:text-lg transition-all duration-300 hover:shadow-lg hover:shadow-yellow-500/25 min-h-[44px] w-full sm:w-auto"
               >
                 <Link href="/membership">View Membership</Link>
               </Button>
               <Button
                 asChild
                 variant="outline"
-                className="border-yellow-500/50 text-yellow-500 hover:bg-yellow-500/10 hover:border-yellow-500 font-semibold px-8 py-6 text-lg"
+                className="border-yellow-500/50 text-yellow-500 hover:bg-yellow-500/10 hover:border-yellow-500 font-semibold px-8 py-6 text-base sm:text-lg min-h-[44px] w-full sm:w-auto"
               >
                 <Link href="/trainers">Meet Our Trainers</Link>
               </Button>

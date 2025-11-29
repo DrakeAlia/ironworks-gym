@@ -87,28 +87,28 @@ export default function Home() {
             <p className="text-yellow-500 font-semibold uppercase tracking-[0.3em] mb-4">
               Since 1974
             </p>
-            <h1 className="text-4xl md:text-7xl font-bold mb-4 text-white">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 text-white leading-tight">
               Iron Works Gym
             </h1>
-            <p className="text-2xl md:text-3xl text-white font-semibold mb-6">
+            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white font-semibold mb-6 px-2">
               &quot;The Gym That&apos;s Not A Health Club&quot;
             </p>
-            <p className="text-xl md:text-2xl text-zinc-300 mb-8 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-zinc-300 mb-8 max-w-3xl mx-auto px-4">
               Authentic training culture, world-class coaches, and a Bellevue
               icon since 1974. This is where serious athletes and everyday
               lifters come to work.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
               <Link
                 href="/membership"
-                className="inline-flex items-center justify-center px-8 py-4 bg-yellow-500 text-zinc-950 font-semibold rounded-lg hover:bg-yellow-400 transition-all duration-300 hover:shadow-lg hover:shadow-yellow-500/25 text-lg"
+                className="inline-flex items-center justify-center px-8 py-4 bg-yellow-500 text-zinc-950 font-semibold rounded-lg hover:bg-yellow-400 transition-all duration-300 hover:shadow-lg hover:shadow-yellow-500/25 text-base sm:text-lg min-h-[44px]"
               >
                 Start Your Journey
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
               <Link
                 href="/about"
-                className="inline-flex items-center justify-center px-8 py-4 border-2 border-yellow-500 text-yellow-500 font-semibold rounded-lg hover:bg-yellow-500/10 transition-all duration-300 text-lg"
+                className="inline-flex items-center justify-center px-8 py-4 border-2 border-yellow-500 text-yellow-500 font-semibold rounded-lg hover:bg-yellow-500/10 transition-all duration-300 text-base sm:text-lg min-h-[44px]"
               >
                 Our Story
               </Link>
@@ -120,7 +120,7 @@ export default function Home() {
       {/* Stats Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-zinc-900/40">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
             {[
               { number: "50+", label: "Years Strong" },
               { number: "10+", label: "Expert Trainers" },
@@ -135,10 +135,10 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="text-center"
               >
-                <p className="text-4xl md:text-5xl font-bold text-yellow-500 mb-2">
+                <p className="text-3xl sm:text-4xl md:text-5xl font-bold text-yellow-500 mb-2">
                   {stat.number}
                 </p>
-                <p className="text-zinc-400 text-sm md:text-base">
+                <p className="text-zinc-400 text-xs sm:text-sm md:text-base">
                   {stat.label}
                 </p>
               </motion.div>
@@ -159,10 +159,10 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 px-4">
               Why <span className="text-yellow-500">Iron Works</span>
             </h2>
-            <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-zinc-400 max-w-2xl mx-auto px-4">
               Everything you need to forge the strongest version of yourself.
             </p>
           </motion.div>
@@ -220,7 +220,8 @@ export default function Home() {
                 alt="Iron Works Gym Logo"
                 width={300}
                 height={300}
-                className="object-contain"
+                className="object-contain w-full max-w-[250px] sm:max-w-[300px] mx-auto"
+                sizes="(min-width: 1024px) 50vw, 100vw"
               />
             </motion.div>
             <motion.div
@@ -230,7 +231,7 @@ export default function Home() {
               transition={{ duration: 0.7 }}
               className="text-white"
             >
-              <p className="text-xl md:text-2xl leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed px-4">
                 With everything from the TRX Suspension Training, to
                 kettlebells, medicine balls, multi-height steps, to a functional
                 ladder training system, Ironworks is your destination for
@@ -263,10 +264,10 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="space-y-6"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-yellow-500 uppercase tracking-wider">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-yellow-500 uppercase tracking-wider px-4">
               Personal Trainers
             </h2>
-            <p className="text-xl md:text-2xl text-zinc-200 leading-relaxed max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-zinc-200 leading-relaxed max-w-3xl mx-auto px-4">
               Our trainers will help you build a safe and efficient workout plan
               to suit your fitness goals. Our trainers meet nationally
               recognized certification standards for fitness.
@@ -274,7 +275,7 @@ export default function Home() {
             <div className="pt-4">
               <Button
                 asChild
-                className="bg-yellow-500 text-zinc-950 hover:bg-yellow-400 font-semibold px-8 py-6 text-lg transition-all duration-300 hover:shadow-lg hover:shadow-yellow-500/25"
+                className="bg-yellow-500 text-zinc-950 hover:bg-yellow-400 font-semibold px-8 py-6 text-base sm:text-lg transition-all duration-300 hover:shadow-lg hover:shadow-yellow-500/25 min-h-[44px]"
               >
                 <Link href="/trainers">Meet Our Trainers</Link>
               </Button>
@@ -293,10 +294,10 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 px-4">
               What Our <span className="text-yellow-500">Members</span> Say
             </h2>
-            <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-zinc-400 max-w-2xl mx-auto px-4">
               Real stories from real people who transformed their lives at Iron
               Works.
             </p>
@@ -352,17 +353,17 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="space-y-6"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 px-4">
               Transform Your <span className="text-yellow-500">Strength</span>
             </h2>
-            <p className="text-xl md:text-2xl text-zinc-200 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-zinc-200 leading-relaxed max-w-2xl mx-auto px-4">
               Join a community of dedicated athletes and everyday lifters who
               are committed to achieving their fitness goals.
             </p>
             <div className="pt-4">
               <Link
                 href="/membership"
-                className="inline-flex items-center justify-center px-8 py-4 bg-yellow-500 text-zinc-950 font-semibold rounded-lg hover:bg-yellow-400 transition-all duration-300 hover:shadow-lg hover:shadow-yellow-500/25 text-lg"
+                className="inline-flex items-center justify-center px-8 py-4 bg-yellow-500 text-zinc-950 font-semibold rounded-lg hover:bg-yellow-400 transition-all duration-300 hover:shadow-lg hover:shadow-yellow-500/25 text-base sm:text-lg min-h-[44px]"
               >
                 Start Your Journey
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -382,17 +383,17 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="bg-gradient-to-r from-yellow-500/20 to-yellow-600/20 border-2 border-yellow-500 rounded-2xl p-12 text-center"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 px-4">
               Ready to <span className="text-yellow-500">Forge</span> Your
               Legacy?
             </h2>
-            <p className="text-xl text-zinc-300 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-zinc-300 mb-8 max-w-2xl mx-auto px-4">
               Join Iron Works Gym today and start your transformation. No
               commitment, just results.
             </p>
             <Link
               href="/membership"
-              className="inline-flex items-center justify-center px-8 py-4 bg-yellow-500 text-zinc-950 font-semibold rounded-lg hover:bg-yellow-400 transition-all duration-300 text-lg hover:shadow-lg hover:shadow-yellow-500/25 animate-pulse hover:animate-none"
+              className="inline-flex items-center justify-center px-8 py-4 bg-yellow-500 text-zinc-950 font-semibold rounded-lg hover:bg-yellow-400 transition-all duration-300 text-base sm:text-lg hover:shadow-lg hover:shadow-yellow-500/25 animate-pulse hover:animate-none min-h-[44px]"
             >
               View Membership Plans
               <ArrowRight className="ml-2 h-5 w-5" />

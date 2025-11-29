@@ -103,10 +103,10 @@ export default function Trainers() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-white px-4">
               Our <span className="text-yellow-500">Trainers</span>
             </h1>
-            <p className="text-xl text-zinc-300 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg sm:text-xl text-zinc-300 max-w-3xl mx-auto leading-relaxed px-4">
               Our trainers will help you build a safe and efficient workout plan
               to suit your fitness goals. All of our Personal Trainers meet
               nationally recognized certification standards for fitness. Give us
@@ -139,9 +139,9 @@ export default function Trainers() {
                 />
               </div>
               {/* Quote */}
-              <div className="p-8 md:p-12 flex flex-col justify-center">
+              <div className="p-6 sm:p-8 md:p-12 flex flex-col justify-center">
                 <Quote className="h-8 w-8 text-yellow-500 mb-4" />
-                <blockquote className="text-xl md:text-2xl text-zinc-200 leading-relaxed mb-6">
+                <blockquote className="text-lg sm:text-xl md:text-2xl text-zinc-200 leading-relaxed mb-6">
                   &quot;I am very impressed with the staff. The attention is
                   given to keeping the gym clean and everyone safe is
                   exceptional&quot;
@@ -174,15 +174,15 @@ export default function Trainers() {
                   priority
                 />
               </div>
-              <div className="p-8 md:p-12 flex flex-col justify-center">
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
+              <div className="p-6 sm:p-8 md:p-12 flex flex-col justify-center">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2">
                   {rohit.name}
                 </h2>
-                <p className="text-yellow-500 font-semibold text-lg mb-6">
+                <p className="text-yellow-500 font-semibold text-base sm:text-lg mb-6">
                   {rohit.role}
                 </p>
                 {rohit.bio && (
-                  <p className="text-zinc-300 text-lg leading-relaxed">
+                  <p className="text-zinc-300 text-base sm:text-lg leading-relaxed">
                     {rohit.bio}
                   </p>
                 )}
@@ -244,9 +244,9 @@ export default function Trainers() {
                         <TooltipTrigger asChild>
                           <a
                             href={`tel:${trainer.phone.replace(/-/g, "")}`}
-                            className="flex items-center gap-2 text-zinc-400 hover:text-yellow-400 transition-colors text-sm"
+                            className="flex items-center gap-2 text-zinc-400 hover:text-yellow-400 transition-colors text-sm min-h-[44px] px-2 -mx-2 rounded"
                           >
-                            <Phone className="h-4 w-4" />
+                            <Phone className="h-4 w-4 flex-shrink-0" />
                             <span>{trainer.phone}</span>
                           </a>
                         </TooltipTrigger>
@@ -260,9 +260,9 @@ export default function Trainers() {
                         <TooltipTrigger asChild>
                           <a
                             href={`mailto:${trainer.email}`}
-                            className="flex items-center gap-2 text-zinc-400 hover:text-yellow-400 transition-colors text-sm"
+                            className="flex items-center gap-2 text-zinc-400 hover:text-yellow-400 transition-colors text-sm min-h-[44px] px-2 -mx-2 rounded"
                           >
-                            <Mail className="h-4 w-4" />
+                            <Mail className="h-4 w-4 flex-shrink-0" />
                             <span className="break-all">{trainer.email}</span>
                           </a>
                         </TooltipTrigger>
@@ -332,23 +332,23 @@ export default function Trainers() {
             transition={{ duration: 0.6 }}
             className="text-center space-y-6"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white px-4">
               Ready to Start Your Journey?
             </h2>
-            <p className="text-xl text-zinc-300 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-zinc-300 max-w-2xl mx-auto px-4">
               Visit us at 12708 Northup Way, Bellevue or call (425) 883-6006
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4 px-4">
               <Button
                 asChild
-                className="bg-yellow-500 text-zinc-950 hover:bg-yellow-400 font-semibold px-10 py-7 text-lg hover:shadow-lg hover:shadow-yellow-500/25 transition-all duration-300"
+                className="bg-yellow-500 text-zinc-950 hover:bg-yellow-400 font-semibold px-10 py-7 text-base sm:text-lg hover:shadow-lg hover:shadow-yellow-500/25 transition-all duration-300 min-h-[44px] w-full sm:w-auto"
               >
                 <Link href="/membership">View Membership</Link>
               </Button>
               <Button
                 asChild
                 variant="outline"
-                className="border-yellow-500/50 text-yellow-500 hover:bg-yellow-500/10 hover:border-yellow-500 font-semibold px-10 py-7 text-lg hover:shadow-lg transition-all"
+                className="border-yellow-500/50 text-yellow-500 hover:bg-yellow-500/10 hover:border-yellow-500 font-semibold px-10 py-7 text-base sm:text-lg hover:shadow-lg transition-all min-h-[44px] w-full sm:w-auto"
               >
                 <Link href="/about">Learn More</Link>
               </Button>

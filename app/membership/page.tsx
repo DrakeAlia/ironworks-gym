@@ -13,6 +13,12 @@ import {
   MapPin,
   Phone,
 } from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 export default function Membership() {
   const premiumPlan = {
@@ -88,6 +94,33 @@ export default function Membership() {
     },
   ];
 
+  const faqs = [
+    {
+      question: "What are your membership options?",
+      answer: "We offer flexible monthly memberships starting at $50/month, with options for personal training add-ons and family plans. Drop by or call us to discuss the best option for you.",
+    },
+    {
+      question: "Do I need to sign a contract?",
+      answer: "No long-term contracts required. Our memberships are month-to-month with no cancellation fees. We believe in earning your loyalty through great service.",
+    },
+    {
+      question: "What equipment do you have?",
+      answer: "Iron Works features premium free weights, plate-loaded machines, cable stations, cardio equipment, TRX suspension systems, kettlebells, medicine balls, and dedicated stretching areas.",
+    },
+    {
+      question: "Do you offer personal training?",
+      answer: "Yes! We have 10+ certified personal trainers available. Each trainer brings unique expertise and certifications. Contact us to find the right trainer for your goals.",
+    },
+    {
+      question: "What are your hours?",
+      answer: "Monday-Friday: 5 AM - 9 PM, Saturday: 7 AM - 6 PM, Sunday: 10 AM - 4 PM. We offer extended hours to fit your schedule.",
+    },
+    {
+      question: "Is there a free trial?",
+      answer: "Yes! We offer a free day pass so you can experience Iron Works before committing. Just stop by during business hours and our staff will show you around.",
+    },
+  ];
+
   return (
     <div className="bg-zinc-950">
       {/* Hero Section */}
@@ -113,13 +146,13 @@ export default function Membership() {
             <p className="text-yellow-500 font-semibold uppercase tracking-[0.3em] mb-4">
               Since 1974
             </p>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 px-4">
               Membership <span className="text-yellow-500">Plans</span>
             </h1>
-            <p className="text-2xl text-white font-semibold mb-4">
-              “The Gym That's Not A Health Club”
+            <p className="text-lg sm:text-xl md:text-2xl text-white font-semibold mb-4 px-4">
+              "The Gym That's Not A Health Club"
             </p>
-            <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto px-4">
               Choose the plan that fits your goals and train at Bellevue's original hardcore gym.
             </p>
           </motion.div>
@@ -136,10 +169,10 @@ export default function Membership() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 px-4">
               Inside the <span className="text-yellow-500">Forge</span>
             </h2>
-            <p className="text-xl text-zinc-400 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-zinc-400 max-w-3xl mx-auto px-4">
               Tour the spaces that make Iron Works Gym a Bellevue staple—from dumbbell rows to the suspension zone.
             </p>
           </motion.div>
@@ -177,7 +210,7 @@ export default function Membership() {
       {/* Pricing Plans */}
       <section className="py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {/* Premium Plan */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -189,8 +222,8 @@ export default function Membership() {
               <p className="text-xs uppercase tracking-[0.3em] text-yellow-400 mb-3">
                 {premiumPlan.subtitle}
               </p>
-              <h3 className="text-3xl font-bold text-white mb-2">{premiumPlan.title}</h3>
-              <p className="text-5xl font-extrabold text-yellow-400 mb-6">{premiumPlan.price}</p>
+              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">{premiumPlan.title}</h3>
+              <p className="text-4xl sm:text-5xl font-extrabold text-yellow-400 mb-6">{premiumPlan.price}</p>
               <p className="text-zinc-400 text-sm mb-6">
                 Monthly dues per member. Family add-on specials available at point of sale.
               </p>
@@ -215,7 +248,7 @@ export default function Membership() {
               <p className="text-xs uppercase tracking-[0.3em] text-yellow-400 mb-3">
                 Term Memberships / Gym
               </p>
-              <h3 className="text-3xl font-bold text-white mb-6">Short & Long Terms</h3>
+              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6">Short & Long Terms</h3>
               <ul className="divide-y divide-yellow-500/10">
                 {termMemberships.map((term) => (
                   <li key={term.label} className="flex items-center justify-between py-3">
@@ -242,9 +275,9 @@ export default function Membership() {
               <p className="text-xs uppercase tracking-[0.3em] text-yellow-400 mb-3">
                 Corporate Memberships
               </p>
-              <h3 className="text-3xl font-bold text-white mb-2">Team Training</h3>
+              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">Team Training</h3>
               <p className="text-zinc-400 text-sm mb-4">{corporatePlan.description}</p>
-              <p className="text-4xl font-bold text-yellow-400 mb-6">{corporatePlan.price}</p>
+              <p className="text-3xl sm:text-4xl font-bold text-yellow-400 mb-6">{corporatePlan.price}</p>
               <ul className="space-y-4">
                 {corporatePlan.bullets.map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm text-zinc-300">
@@ -258,6 +291,52 @@ export default function Membership() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-zinc-900/40">
+        <div className="max-w-3xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 px-4">
+              Frequently Asked <span className="text-yellow-500">Questions</span>
+            </h2>
+            <p className="text-lg sm:text-xl text-zinc-400 max-w-2xl mx-auto px-4">
+              Everything you need to know about Iron Works Gym memberships.
+            </p>
+          </motion.div>
+
+          <Accordion type="single" collapsible className="w-full space-y-4">
+            {faqs.map((faq, index) => (
+              <motion.div
+                key={faq.question}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+              >
+                <AccordionItem
+                  value={`item-${index}`}
+                  className="bg-zinc-950 border border-yellow-500/20 rounded-lg px-4 sm:px-6"
+                >
+                  <AccordionTrigger className="text-left hover:no-underline min-h-[44px] py-4">
+                    <span className="text-base sm:text-lg font-semibold text-white">
+                      {faq.question}
+                    </span>
+                  </AccordionTrigger>
+                  <AccordionContent className="text-zinc-300 leading-relaxed pt-2 pb-4 text-sm sm:text-base">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              </motion.div>
+            ))}
+          </Accordion>
+        </div>
+      </section>
+
       {/* Additional Info */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-zinc-900/50">
         <div className="max-w-6xl mx-auto">
@@ -268,7 +347,7 @@ export default function Membership() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 px-4">
               What's <span className="text-yellow-500">Included</span>
             </h2>
           </motion.div>
@@ -308,10 +387,10 @@ export default function Membership() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 px-4">
               Membership <span className="text-yellow-500">Policies</span>
             </h2>
-            <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-zinc-400 max-w-2xl mx-auto px-4">
               Important information about your membership and gym policies.
             </p>
           </motion.div>
@@ -351,20 +430,20 @@ export default function Membership() {
             transition={{ duration: 0.6 }}
             className="bg-gradient-to-r from-yellow-500/20 to-yellow-600/20 border-2 border-yellow-500 rounded-2xl p-12 text-center"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 px-4">
               Ready to <span className="text-yellow-500">Start</span>?
             </h2>
-            <p className="text-xl text-zinc-300 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-zinc-300 mb-8 max-w-2xl mx-auto px-4">
               Visit 12708 Northup Way for a free tour or call us to lock in your spot. No pressure, just real training info.
             </p>
             <Link
               href="#"
-              className="inline-flex items-center justify-center px-8 py-4 bg-yellow-500 text-zinc-950 font-semibold rounded-lg hover:bg-yellow-400 transition-all duration-300 hover:shadow-lg hover:shadow-yellow-500/25 text-lg"
+              className="inline-flex items-center justify-center px-8 py-4 bg-yellow-500 text-zinc-950 font-semibold rounded-lg hover:bg-yellow-400 transition-all duration-300 hover:shadow-lg hover:shadow-yellow-500/25 text-base sm:text-lg min-h-[44px]"
             >
               Schedule a Tour
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
-            <p className="text-zinc-400 text-sm mt-6">
+            <p className="text-zinc-400 text-xs sm:text-sm mt-6 px-4">
               Prefer to talk? Call (425) 883-6006 · Mon–Fri 5 AM–9 PM · Sat 7 AM–6 PM · Sun 10 AM–4 PM
             </p>
           </motion.div>
