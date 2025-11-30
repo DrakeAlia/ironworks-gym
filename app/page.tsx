@@ -70,9 +70,13 @@ export default function Home() {
           muted
           loop
           playsInline
+          preload="auto"
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="/video/ironworks-video.mp4" type="video/mp4" />
+          <source
+            src="https://res.cloudinary.com/dd6njhtia/video/upload/ironworks-video-compressed_tafg0l.mp4"
+            type="video/mp4"
+          />
         </video>
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-zinc-950/40" />
