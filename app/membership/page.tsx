@@ -96,14 +96,6 @@ export default function Membership() {
 
   const faqs = [
     {
-      question: "What are your membership options?",
-      answer: "We offer flexible monthly memberships starting at $50/month, with options for personal training add-ons and family plans. Drop by or call us to discuss the best option for you.",
-    },
-    {
-      question: "Do I need to sign a contract?",
-      answer: "No long-term contracts required. Our memberships are month-to-month with no cancellation fees. We believe in earning your loyalty through great service.",
-    },
-    {
       question: "What equipment do you have?",
       answer: "Iron Works features premium free weights, plate-loaded machines, cable stations, cardio equipment, TRX suspension systems, kettlebells, medicine balls, and dedicated stretching areas.",
     },
@@ -114,10 +106,6 @@ export default function Membership() {
     {
       question: "What are your hours?",
       answer: "Monday-Friday: 5 AM - 9 PM, Saturday: 7 AM - 6 PM, Sunday: 10 AM - 4 PM. We offer extended hours to fit your schedule.",
-    },
-    {
-      question: "Is there a free trial?",
-      answer: "Yes! We offer a free day pass so you can experience Iron Works before committing. Just stop by during business hours and our staff will show you around.",
     },
   ];
 

@@ -30,6 +30,13 @@ const rohit: Trainer = {
   bio: "Health and fitness is my greatest passion in life. Nothing is more rewarding to me than empowering individuals to find their inner strength and achieve their goals. Prior to becoming the owner of Iron Works, I gained tremendous experience managing gyms and training clients within the fitness industry. I look forward and am honored to carry on the legacy Iron Works has set forth for the past 50+ years.",
 };
 
+const timEnnis: Trainer = {
+  name: "Tim Ennis",
+  role: "Trainer",
+  image: "/images/trainers/Iron Works-tim.jpg",
+  phone: "425-883-6006",
+};
+
 const trainers: Trainer[] = [
   {
     name: "Danny Dorazio",
@@ -62,12 +69,6 @@ const trainers: Trainer[] = [
     image: "/images/trainers/Iron Works-mihai.jpg",
     phone: "425-444-2729",
     email: "coachmihai@imfinallyfit.com",
-  },
-  {
-    name: "Tim Ennis",
-    role: "Trainer",
-    image: "/images/trainers/Iron Works-tim.jpg",
-    phone: "425-883-6006",
   },
   {
     name: "Ariana Wang",
@@ -127,20 +128,9 @@ export default function Trainers() {
             transition={{ duration: 0.6 }}
             className="bg-gradient-to-r from-yellow-500/10 to-yellow-600/10 border border-yellow-500/30 rounded-3xl overflow-hidden"
           >
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-              {/* Image */}
-              <div className="group relative aspect-[3/4] lg:aspect-auto lg:min-h-[400px] overflow-hidden">
-                <Image
-                  src="/images/trainers-hero.jpg"
-                  alt="Iron Works Gym trainers"
-                  fill
-                  className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
-                  sizes="(min-width: 1024px) 50vw, 100vw"
-                />
-              </div>
-              {/* Quote */}
-              <div className="p-6 sm:p-8 md:p-12 flex flex-col justify-center">
-                <Quote className="h-8 w-8 text-yellow-500 mb-4" />
+            <div className="max-w-3xl mx-auto">
+              <div className="p-6 sm:p-8 md:p-12 flex flex-col justify-center text-center">
+                <Quote className="h-8 w-8 text-yellow-500 mb-4 mx-auto" />
                 <blockquote className="text-lg sm:text-xl md:text-2xl text-zinc-200 leading-relaxed mb-6">
                   &quot;I am very impressed with the staff. The attention is
                   given to keeping the gym clean and everyone safe is
@@ -185,6 +175,50 @@ export default function Trainers() {
                   <p className="text-zinc-300 text-base sm:text-lg leading-relaxed">
                     {rohit.bio}
                   </p>
+                )}
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Tim Ennis Hero Card */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-zinc-900/40">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="bg-zinc-900 border border-yellow-500/30 rounded-3xl overflow-hidden hover:border-yellow-500/50 transition-all hover:shadow-xl hover:shadow-yellow-500/10"
+          >
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+              <div className="group relative aspect-[3/4] lg:aspect-auto lg:min-h-[650px] overflow-hidden">
+                <Image
+                  src={timEnnis.image}
+                  alt={timEnnis.name}
+                  fill
+                  className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                />
+              </div>
+              <div className="p-6 sm:p-8 md:p-12 flex flex-col justify-center">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2">
+                  {timEnnis.name}
+                </h2>
+                <p className="text-yellow-500 font-semibold text-base sm:text-lg mb-6">
+                  {timEnnis.role}
+                </p>
+                {timEnnis.phone && (
+                  <div className="flex items-center gap-3 text-zinc-300">
+                    <Phone className="h-5 w-5 text-yellow-500" />
+                    <a 
+                      href={`tel:${timEnnis.phone.replace(/-/g, "")}`}
+                      className="hover:text-yellow-400 transition-colors text-lg"
+                    >
+                      {timEnnis.phone}
+                    </a>
+                  </div>
                 )}
               </div>
             </div>
