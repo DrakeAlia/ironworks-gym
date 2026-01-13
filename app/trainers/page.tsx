@@ -108,7 +108,7 @@ const trainers: Trainer[] = [
     role: "Trainer",
     image: "/images/trainers/Iron Works-nicholas.jpg",
     phone: "512-529-7234",
-    bio: "I specialize in body composition, strength, and long-term health for adults with demanding schedules. My work centers on efficient training, sustainable nutrition, and clear accountability—delivering measurable results without burnout. I focus on simple,epeatable systems that help clients build muscle, lose fat, and maintain progress over time.",
+    bio: "I specialize in body composition, strength, and long-term health for adults with demanding schedules. My work centers on efficient training, sustainable nutrition, and clear accountability—delivering measurable results without burnout. I focus on simple, repeatable systems that help clients build muscle, lose fat, and maintain progress over time.",
     specialty: "Body Composition & Strength",
   },
 ];
@@ -269,7 +269,7 @@ export default function Trainers() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ scale: 1.02 }}
-                className="group bg-zinc-900 border border-yellow-500/20 rounded-2xl overflow-hidden hover:border-yellow-500/60 transition-all hover:shadow-lg hover:shadow-yellow-500/10"
+                className="group bg-zinc-900 border border-yellow-500/20 rounded-2xl overflow-hidden hover:border-yellow-500/60 transition-all hover:shadow-lg hover:shadow-yellow-500/10 flex flex-col md:min-h-[600px]"
               >
                 <div className="relative aspect-[3/4] w-full overflow-hidden">
                   <Image
@@ -281,7 +281,7 @@ export default function Trainers() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/40 via-transparent to-transparent pointer-events-none" />
                 </div>
-                <div className="p-6">
+                <div className="p-6 flex-1 flex flex-col">
                   <h3 className="text-2xl font-bold text-white mb-1">
                     {trainer.name}
                   </h3>
@@ -299,11 +299,11 @@ export default function Trainers() {
                     </div>
                   )}
                   {trainer.bio && (
-                    <p className="text-zinc-300 mb-4 leading-relaxed text-sm">
+                    <p className="text-zinc-300 mb-4 leading-relaxed text-sm line-clamp-3">
                       {trainer.bio}
                     </p>
                   )}
-                  <div className="flex flex-col gap-2 mt-4">
+                  <div className="flex flex-col gap-2 mt-auto">
                     {trainer.phone && (
                       <Tooltip>
                         <TooltipTrigger asChild>
