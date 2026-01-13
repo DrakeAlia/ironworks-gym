@@ -8,17 +8,17 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8">
           {/* Brand */}
-          <div className="space-y-6 text-center md:text-left">
+          <div className="space-y-4 text-center md:text-left">
             <Link href="/" aria-label="Iron Works Gym home">
               <Image
                 src="/images/ironworksLogo.png"
                 alt="Iron Works Gym logo"
                 width={180}
                 height={60}
-                className="w-auto h-12 object-contain drop-shadow-[0_6px_16px_rgba(0,0,0,0.45)]"
+                className="w-auto h-12 object-contain drop-shadow-[0_6px_16px_rgba(0,0,0,0.45)] hidden md:block"
               />
             </Link>
-            <p className="text-zinc-400 text-sm">
+            <p className="text-zinc-400 text-sm mt-4">
               The Gym That's Not A Health Club.<br />
               Serving Bellevue since 1974.
             </p>
