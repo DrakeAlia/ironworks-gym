@@ -1,14 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Mail, Phone, MapPin, Facebook, Instagram, Twitter } from "lucide-react";
+import { Mail, Phone, MapPin, Instagram } from "lucide-react";
 
 export default function Footer() {
   return (
     <footer className="bg-zinc-950 border-t border-yellow-500/20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8">
           {/* Brand */}
-          <div className="space-y-6">
+          <div className="space-y-6 text-center md:text-left">
             <Link href="/" aria-label="Iron Works Gym home">
               <Image
                 src="/images/ironworksLogo.png"
@@ -22,27 +22,15 @@ export default function Footer() {
               The Gym That's Not A Health Club.<br />
               Serving Bellevue since 1974.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 justify-center md:justify-start">
               <a
-                href="#"
-                className="text-zinc-400 hover:text-yellow-500 transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a
-                href="#"
+                href="https://www.instagram.com/ironworksgymbellevue/?hl=en"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-zinc-400 hover:text-yellow-500 transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram className="h-5 w-5" />
-              </a>
-              <a
-                href="#"
-                className="text-zinc-400 hover:text-yellow-500 transition-colors"
-                aria-label="Twitter"
-              >
-                <Twitter className="h-5 w-5" />
               </a>
             </div>
           </div>
@@ -108,15 +96,24 @@ export default function Footer() {
           {/* Hours */}
           <div>
             <h3 className="text-white font-semibold mb-4">Hours</h3>
-            <ul className="space-y-2 text-zinc-400 text-sm">
-              <li>Mon - Fri: 5:00 AM - 9:00 PM</li>
-              <li>Sat: 7:00 AM - 6:00 PM</li>
-              <li>Sun: 10:00 AM - 4:00 PM</li>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <span className="text-zinc-400">Mon - Fri: </span>
+                <span className="text-zinc-200">5:00 AM - 9:00 PM</span>
+              </li>
+              <li>
+                <span className="text-zinc-400">Sat: </span>
+                <span className="text-zinc-200">7:00 AM - 6:00 PM</span>
+              </li>
+              <li>
+                <span className="text-zinc-400">Sun: </span>
+                <span className="text-zinc-200">10:00 AM - 4:00 PM</span>
+              </li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-8 pt-8 border-t border-yellow-500/20">
+        <div className="mt-6 pt-6 border-t border-yellow-500/20">
           <p className="text-center text-zinc-500 text-sm">
             &copy; {new Date().getFullYear()} Iron Works Gym. All rights reserved.
           </p>
