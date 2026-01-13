@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Phone, Mail, Quote } from "lucide-react";
+import { Phone, Mail, Quote, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -21,6 +21,7 @@ type Trainer = {
   email?: string;
   bio?: string;
   specialty?: string;
+  instagram?: string;
 };
 
 const rohit: Trainer = {
@@ -32,9 +33,10 @@ const rohit: Trainer = {
 
 const timEnnis: Trainer = {
   name: "Tim Ennis",
-  role: "Trainer",
+  role: "Manager & Operator",
   image: "/images/trainers/Iron Works-tim.jpg",
   phone: "425-883-6006",
+  specialty: "Owning Selected Physique",
 };
 
 const trainers: Trainer[] = [
@@ -46,6 +48,7 @@ const trainers: Trainer[] = [
     email: "dorazio.dan@gmail.com",
     bio: "Danny has put his lifetime's passion and energy into fitness as a certified professional trainer by NASM, ISSA, Tom Platz and David Barton. His professional career spans over 15 years. He started lifting weights as a teen and competed as a junior bodybuilder and still competes today.",
     specialty: "NASM, ISSA Certified",
+    instagram: "https://www.instagram.com/djdorazio?igsh=d2FiYTdhY211MzBl",
   },
   {
     name: "Ryan Torno",
@@ -62,6 +65,7 @@ const trainers: Trainer[] = [
     image: "/images/trainers/Iron Works-mike.jpg",
     phone: "206-375-8284",
     email: "coachmike@knockoutresults.net",
+    instagram: "https://www.instagram.com/k.o._results?igsh=MWgwenNoYTk4a3BqcQ%3D%3D",
   },
   {
     name: "Coach Mihai",
@@ -74,11 +78,13 @@ const trainers: Trainer[] = [
     name: "Ariana Wang",
     role: "Trainer",
     image: "/images/trainers/Iron Works-ariana.jpg",
+    instagram: "https://www.instagram.com/ariana_on_fire?igsh=MWlzaHN4NDRlN2w1Zw%3D%3D",
   },
   {
     name: "Neil Austin",
     role: "Trainer",
     image: "/images/trainers/Iron Works-neil.jpg",
+    instagram: "https://www.instagram.com/bigfreakinneil?igsh=OHhtbzgxczJ4NmJu",
   },
   {
     name: "Nick Yet",
@@ -89,6 +95,21 @@ const trainers: Trainer[] = [
     name: "Caleb Beck",
     role: "Trainer",
     image: "/images/trainers/Iron Works-caleb.jpg",
+  },
+  {
+    name: "Gabe",
+    role: "Trainer",
+    image: "/images/trainers/Iron Works-gabe.jpg",
+    bio: "Gabe is a versatile trainer with a background in snowboard instruction, physical therapy, and personal training. As a personal trainer for the past 4 years, Gabe has excelled in designing workout programs and providing nutrition and lifestyle coaching to a wide range of clients. His unique blend of skills and experience, along with his strong communication and interpersonal abilities, make him an invaluable asset to any person looking to obtain their training goals.",
+    specialty: "Nutrition & Lifestyle Coaching",
+  },
+  {
+    name: "Nicholas Shelton",
+    role: "Trainer",
+    image: "/images/trainers/Iron Works-nicholas.jpg",
+    phone: "512-529-7234",
+    bio: "I specialize in body composition, strength, and long-term health for adults with demanding schedules. My work centers on efficient training, sustainable nutrition, and clear accountability—delivering measurable results without burnout. I focus on simple,epeatable systems that help clients build muscle, lose fat, and maintain progress over time.",
+    specialty: "Body Composition & Strength",
   },
 ];
 
@@ -209,10 +230,20 @@ export default function Trainers() {
                 <p className="text-yellow-500 font-semibold text-base sm:text-lg mb-6">
                   {timEnnis.role}
                 </p>
+                {timEnnis.specialty && (
+                  <div className="mb-6">
+                    <Badge
+                      variant="outline"
+                      className="bg-yellow-500/10 text-yellow-400 border-yellow-500/20"
+                    >
+                      {timEnnis.specialty}
+                    </Badge>
+                  </div>
+                )}
                 {timEnnis.phone && (
                   <div className="flex items-center gap-3 text-zinc-300">
                     <Phone className="h-5 w-5 text-yellow-500" />
-                    <a 
+                    <a
                       href={`tel:${timEnnis.phone.replace(/-/g, "")}`}
                       className="hover:text-yellow-400 transition-colors text-lg"
                     >
@@ -302,6 +333,24 @@ export default function Trainers() {
                         </TooltipTrigger>
                         <TooltipContent>
                           <p>Click to email</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    )}
+                    {trainer.instagram && (
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <a
+                            href={trainer.instagram}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 text-zinc-400 hover:text-yellow-400 transition-colors text-sm min-h-[44px] px-2 -mx-2 rounded"
+                          >
+                            <Instagram className="h-4 w-4 flex-shrink-0" />
+                            <span>Instagram</span>
+                          </a>
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>Visit Instagram</p>
                         </TooltipContent>
                       </Tooltip>
                     )}
