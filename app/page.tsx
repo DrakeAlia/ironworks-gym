@@ -122,31 +122,50 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-zinc-900/40">
+      <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-zinc-900/40">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 lg:gap-12 max-w-4xl mx-auto">
             {[
-              { number: "50+", label: "Years Strong" },
-              { number: "10+", label: "Expert Trainers" },
-              { number: "1000+", label: "Members" },
-              { number: "5AM-9PM", label: "Open Daily" },
-            ].map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="text-center"
-              >
-                <p className="text-3xl sm:text-4xl md:text-5xl font-bold text-yellow-500 mb-2">
-                  {stat.number}
-                </p>
-                <p className="text-zinc-400 text-xs sm:text-sm md:text-base">
-                  {stat.label}
-                </p>
-              </motion.div>
-            ))}
+              {
+                number: "50+",
+                label: "Years",
+                description: "of Excellence",
+                icon: Award,
+              },
+              {
+                number: "10+",
+                label: "Trainers",
+                description: "Expert Coaches",
+                icon: Users,
+              },
+            ].map((stat, index) => {
+              const Icon = stat.icon;
+              return (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="group relative bg-gradient-to-br from-zinc-900 to-zinc-950 border border-yellow-500/30 rounded-xl sm:rounded-2xl p-6 sm:p-8 lg:p-10 text-center hover:border-yellow-500/60 transition-all duration-300 hover:shadow-lg hover:shadow-yellow-500/20 active:scale-95 md:hover:scale-105"
+                >
+                  <div className="absolute top-4 right-4 sm:top-6 sm:right-6 bg-yellow-500/10 w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-full flex items-center justify-center transition-transform group-hover:scale-110">
+                    <Icon className="h-5 w-5 sm:h-6 sm:w-6 lg:h-7 lg:w-7 text-yellow-500" />
+                  </div>
+                  <div className="pt-2 sm:pt-0">
+                    <p className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-yellow-500 mb-2 sm:mb-3 tracking-tight">
+                      {stat.number}
+                    </p>
+                    <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-white mb-1 sm:mb-2">
+                      {stat.label}
+                    </p>
+                    <p className="text-xs sm:text-sm md:text-base text-zinc-400 tracking-wide">
+                      {stat.description}
+                    </p>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
