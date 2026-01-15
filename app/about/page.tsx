@@ -11,6 +11,13 @@ import {
   CarouselPrevious,
   type CarouselApi,
 } from "@/components/ui/carousel";
+import {
+  Dialog,
+  DialogContent,
+  DialogClose,
+} from "@/components/ui/dialog";
+import { X } from "lucide-react";
+import { Skeleton } from "@/components/ui/skeleton";
 import CtaSection from "@/components/CtaSection";
 
 const galleryImages = [
@@ -54,6 +61,12 @@ const carouselImages = [
 export default function About() {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
+  const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string } | null>(null);
+  const [loadingImages, setLoadingImages] = useState<Record<string, boolean>>({});
+
+  const handleImageLoad = (imageSrc: string) => {
+    setLoadingImages((prev) => ({ ...prev, [imageSrc]: false }));
+  };
 
   useEffect(() => {
     if (!api) {
@@ -119,14 +132,19 @@ export default function About() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ scale: 1.05 }}
+                onClick={() => setSelectedImage(image)}
                 className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-yellow-500/20 cursor-pointer transition-all duration-300"
               >
+                {loadingImages[image.src] !== false && (
+                  <Skeleton className="absolute inset-0" />
+                )}
                 <Image
                   src={image.src}
                   alt={image.alt}
                   fill
                   className="object-cover transition-all duration-300 hover:brightness-110"
                   sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 90vw"
+                  onLoad={() => handleImageLoad(image.src)}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/60 to-transparent" />
               </motion.div>
@@ -134,6 +152,30 @@ export default function About() {
           </div>
         </div>
       </section>
+
+      {/* Image Lightbox Modal */}
+      <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
+        <DialogContent
+          className="max-w-7xl w-full p-0 bg-zinc-950/95 border-yellow-500/20"
+          showCloseButton={false}
+        >
+          <DialogClose className="absolute top-4 right-4 z-50 p-2 rounded-full bg-zinc-900/80 text-zinc-400 hover:text-yellow-500 hover:bg-zinc-900 transition-colors">
+            <X className="h-6 w-6" />
+            <span className="sr-only">Close</span>
+          </DialogClose>
+          {selectedImage && (
+            <div className="relative w-full h-[80vh]">
+              <Image
+                src={selectedImage.src}
+                alt={selectedImage.alt}
+                fill
+                className="object-contain"
+                sizes="100vw"
+              />
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
 
       {/* Two Column Story */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-zinc-900/40">
@@ -203,6 +245,9 @@ export default function About() {
               {carouselImages.map((image, index) => (
                 <CarouselItem key={index} className="pl-0 basis-full">
                   <div className="relative w-full aspect-[16/9] rounded-3xl overflow-hidden border border-yellow-500/20 bg-zinc-900">
+                    {loadingImages[image.src] !== false && (
+                      <Skeleton className="absolute inset-0" />
+                    )}
                     <Image
                       src={image.src}
                       alt={image.alt}
@@ -210,6 +255,7 @@ export default function About() {
                       className="object-contain"
                       sizes="100vw"
                       priority={index === 0}
+                      onLoad={() => handleImageLoad(image.src)}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/60 via-transparent to-transparent pointer-events-none" />
                   </div>
@@ -225,13 +271,17 @@ export default function About() {
               <button
                 key={index}
                 onClick={() => api?.scrollTo(index)}
-                className={`h-3 w-3 sm:h-2 sm:w-2 rounded-full transition-all duration-300 min-h-[44px] min-w-[44px] flex items-center justify-center ${
-                  current === index
-                    ? "bg-yellow-500 sm:w-8"
-                    : "bg-zinc-600 hover:bg-zinc-500"
-                }`}
+                className="min-h-[44px] min-w-[44px] flex items-center justify-center"
                 aria-label={`Go to slide ${index + 1}`}
-              />
+              >
+                <span
+                  className={`h-2 w-2 rounded-full transition-all duration-300 ${
+                    current === index
+                      ? "bg-yellow-500 w-6"
+                      : "bg-zinc-600 hover:bg-zinc-500"
+                  }`}
+                />
+              </button>
             ))}
           </div>
         </div>

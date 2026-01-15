@@ -1,9 +1,11 @@
 "use client";
 
 import Image from "next/image";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Phone, Mail, Quote, Instagram } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { Skeleton } from "@/components/ui/skeleton";
 import {
   Tooltip,
   TooltipContent,
@@ -113,6 +115,12 @@ const trainers: Trainer[] = [
 ];
 
 export default function Trainers() {
+  const [loadingImages, setLoadingImages] = useState<Record<string, boolean>>({});
+
+  const handleImageLoad = (trainerName: string) => {
+    setLoadingImages((prev) => ({ ...prev, [trainerName]: false }));
+  };
+
   return (
     <div className="bg-zinc-950">
       {/* Hero Section */}
@@ -175,6 +183,9 @@ export default function Trainers() {
           >
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
               <div className="group relative aspect-[3/4] lg:aspect-auto lg:min-h-[650px] overflow-hidden">
+                {loadingImages['rohit'] !== false && (
+                  <Skeleton className="absolute inset-0" />
+                )}
                 <Image
                   src={rohit.image}
                   alt={rohit.name}
@@ -182,6 +193,7 @@ export default function Trainers() {
                   className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
                   sizes="(min-width: 1024px) 50vw, 100vw"
                   priority
+                  onLoad={() => handleImageLoad('rohit')}
                 />
               </div>
               <div className="p-6 sm:p-8 md:p-12 flex flex-col justify-center">
@@ -214,12 +226,16 @@ export default function Trainers() {
           >
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
               <div className="group relative aspect-[3/4] lg:aspect-auto lg:min-h-[650px] overflow-hidden">
+                {loadingImages['timEnnis'] !== false && (
+                  <Skeleton className="absolute inset-0" />
+                )}
                 <Image
                   src={timEnnis.image}
                   alt={timEnnis.name}
                   fill
                   className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
                   sizes="(min-width: 1024px) 50vw, 100vw"
+                  onLoad={() => handleImageLoad('timEnnis')}
                 />
               </div>
               <div className="p-6 sm:p-8 md:p-12 flex flex-col justify-center">
@@ -271,12 +287,16 @@ export default function Trainers() {
                 className="group bg-zinc-900 border border-yellow-500/20 rounded-2xl overflow-hidden hover:border-yellow-500/60 transition-all hover:shadow-lg hover:shadow-yellow-500/10 flex flex-col md:min-h-[600px]"
               >
                 <div className="relative aspect-[3/4] w-full overflow-hidden">
+                  {loadingImages[trainer.name] !== false && (
+                    <Skeleton className="absolute inset-0" />
+                  )}
                   <Image
                     src={trainer.image}
                     alt={trainer.name}
                     fill
                     className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
                     sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                    onLoad={() => handleImageLoad(trainer.name)}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/40 via-transparent to-transparent pointer-events-none" />
                 </div>

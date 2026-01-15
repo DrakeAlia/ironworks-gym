@@ -199,7 +199,7 @@ export default function Home() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.15 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="group bg-zinc-900 border border-yellow-500/20 rounded-lg p-6 hover:border-yellow-500/60 transition-all hover:scale-105 hover:shadow-lg hover:shadow-yellow-500/10"
                 >
                   <div className="bg-yellow-500/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4 transition-transform group-hover:scale-110">
