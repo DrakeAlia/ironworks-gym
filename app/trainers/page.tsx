@@ -1,10 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { Phone, Mail, Quote, Instagram } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
   Tooltip,
@@ -12,6 +10,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { Separator } from "@/components/ui/separator";
+import CtaSection from "@/components/CtaSection";
 
 type Trainer = {
   name: string;
@@ -406,39 +405,7 @@ export default function Trainers() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-zinc-900/60">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center space-y-6"
-          >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white px-4">
-              Ready to Start Your Journey?
-            </h2>
-            <p className="text-lg sm:text-xl text-zinc-300 max-w-2xl mx-auto px-4">
-              Visit us at 12708 Northup Way, Bellevue or call (425) 883-6006
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4 px-4">
-              <Button
-                asChild
-                className="bg-yellow-500 text-zinc-950 hover:bg-yellow-400 font-semibold px-10 py-7 text-base sm:text-lg hover:shadow-lg hover:shadow-yellow-500/25 transition-all duration-300 min-h-[44px] w-full sm:w-auto"
-              >
-                <Link href="/membership">View Membership</Link>
-              </Button>
-              <Button
-                asChild
-                variant="outline"
-                className="border-yellow-500/50 text-yellow-500 hover:bg-yellow-500/10 hover:border-yellow-500 font-semibold px-10 py-7 text-base sm:text-lg hover:shadow-lg transition-all min-h-[44px] w-full sm:w-auto"
-              >
-                <Link href="/about">Learn More</Link>
-              </Button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <CtaSection />
     </div>
   );
 }

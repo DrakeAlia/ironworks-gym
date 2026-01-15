@@ -7,13 +7,13 @@ import {
   Dumbbell,
   Users,
   Award,
-  Clock,
   ArrowRight,
   Quote,
   User,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import CtaSection from "@/components/CtaSection";
 
 export default function Home() {
   const features = [
@@ -21,7 +21,7 @@ export default function Home() {
       icon: Dumbbell,
       title: "Premium Equipment",
       description:
-        "State-of-the-art strength training equipment for all fitness levels.",
+        "Featuring Atlas, Hammer Strength, Life Fitness, and CB Equipment for all fitness levels.",
     },
     {
       icon: Users,
@@ -36,10 +36,10 @@ export default function Home() {
         "Join thousands of members who have transformed their lives.",
     },
     {
-      icon: Clock,
-      title: "Extended Hours",
+      icon: Users,
+      title: "Strong Community",
       description:
-        "Train when it works for you: 5 AM - 9 PM on weekdays, expanded weekend access.",
+        "Train alongside dedicated athletes in Bellevue's most supportive fitness community since 1974.",
     },
   ];
 
@@ -397,33 +397,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="bg-gradient-to-r from-yellow-500/20 to-yellow-600/20 border-2 border-yellow-500 rounded-2xl p-12 text-center"
-          >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 px-4">
-              Ready to <span className="text-yellow-500">Forge</span> Your
-              Legacy?
-            </h2>
-            <p className="text-lg sm:text-xl text-zinc-300 mb-8 max-w-2xl mx-auto px-4">
-              Join Iron Works Gym today and start your transformation. No
-              commitment, just results.
-            </p>
-            <Link
-              href="/membership"
-              className="inline-flex items-center justify-center px-8 py-4 bg-yellow-500 text-zinc-950 font-semibold rounded-lg hover:bg-yellow-400 transition-all duration-300 text-base sm:text-lg hover:shadow-lg hover:shadow-yellow-500/25 animate-pulse hover:animate-none min-h-[44px]"
-            >
-              View Membership Plans
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </motion.div>
-        </div>
-      </section>
+      <CtaSection />
     </div>
   );
 }

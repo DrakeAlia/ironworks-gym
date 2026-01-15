@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Clock, Phone, MapPin } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -20,6 +20,35 @@ export default function Navigation() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-zinc-950/95 backdrop-blur-sm border-b border-yellow-500/20">
+      {/* Contact Info Bar */}
+      <div className="hidden md:block bg-zinc-900 border-b border-yellow-500/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
+          <div className="flex items-center justify-center gap-6 text-xs text-zinc-400">
+            <div className="flex items-center gap-2">
+              <Clock className="h-4 w-4 text-yellow-500" />
+              <span>Mon-Fri: 5AM-9PM · Sat: 7AM-6PM · Sun: 10AM-4PM</span>
+            </div>
+            <a
+              href="tel:+14258836006"
+              className="flex items-center gap-2 hover:text-yellow-400 transition-colors"
+            >
+              <Phone className="h-4 w-4 text-yellow-500" />
+              <span>(425) 883-6006</span>
+            </a>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=12708+Northup+Way+Bellevue+WA+98005"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 hover:text-yellow-400 transition-colors"
+            >
+              <MapPin className="h-4 w-4 text-yellow-500" />
+              <span>12708 Northup Way, Bellevue</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Navigation */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
