@@ -3,12 +3,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, Clock, Phone, MapPin } from "lucide-react";
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { Menu, Clock, Phone, MapPin } from "lucide-react";
+import { motion } from "framer-motion";
+import {
+  Sheet,
+  SheetTrigger,
+  SheetContent,
+  SheetClose,
+} from "@/components/ui/sheet";
 
 export default function Navigation() {
-  const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
   const navLinks = [
@@ -101,81 +105,76 @@ export default function Navigation() {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-3 text-zinc-300 hover:text-yellow-500 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
-            aria-label="Toggle menu"
-          >
-            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Navigation */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden border-t border-yellow-500/20 bg-zinc-950"
-          >
-            <div className="px-4 py-4 space-y-2">
-              {navLinks.map((link) => {
-                const isActive = pathname === link.href;
-                return (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    onClick={() => setIsOpen(false)}
-                    className={`block px-4 py-3 rounded-lg font-medium transition-colors min-h-[44px] flex items-center ${
-                      isActive
-                        ? "text-yellow-500 bg-yellow-500/10"
-                        : "text-zinc-300 hover:text-yellow-400 hover:bg-zinc-900"
-                    }`}
-                  >
-                    {link.label}
-                  </Link>
-                );
-              })}
-              <Link
-                href="/membership"
-                onClick={() => setIsOpen(false)}
-                className="block px-4 py-3 bg-yellow-500 text-zinc-950 font-semibold rounded-lg text-center hover:bg-yellow-400 transition-all duration-300 hover:shadow-lg hover:shadow-yellow-500/25 min-h-[44px] flex items-center justify-center"
+          {/* Mobile Menu */}
+          <Sheet>
+            <SheetTrigger asChild>
+              <button
+                className="md:hidden p-3 text-zinc-300 hover:text-yellow-500 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
+                aria-label="Toggle menu"
               >
-                Join Now
-              </Link>
+                <Menu className="h-6 w-6" />
+              </button>
+            </SheetTrigger>
+            <SheetContent side="right" className="bg-zinc-950 border-l border-yellow-500/20 p-6">
+              <div className="space-y-2">
+                {navLinks.map((link) => {
+                  const isActive = pathname === link.href;
+                  return (
+                    <SheetClose asChild key={link.href}>
+                      <Link
+                        href={link.href}
+                        className={`block px-4 py-3 rounded-lg font-medium transition-colors min-h-[44px] flex items-center ${
+                          isActive
+                            ? "text-yellow-500 bg-yellow-500/10"
+                            : "text-zinc-300 hover:text-yellow-400 hover:bg-zinc-900"
+                        }`}
+                      >
+                        {link.label}
+                      </Link>
+                    </SheetClose>
+                  );
+                })}
+                <SheetClose asChild>
+                  <Link
+                    href="/membership"
+                    className="block px-4 py-3 bg-yellow-500 text-zinc-950 font-semibold rounded-lg text-center hover:bg-yellow-400 transition-all duration-300 hover:shadow-lg hover:shadow-yellow-500/25 min-h-[44px] flex items-center justify-center"
+                  >
+                    Join Now
+                  </Link>
+                </SheetClose>
 
-              {/* Mobile Contact Info */}
-              <div className="pt-4 mt-2 border-t border-yellow-500/20 space-y-2">
-                <a
-                  href="tel:+14258836006"
-                  onClick={() => setIsOpen(false)}
-                  className="flex items-center gap-3 px-4 py-2 text-zinc-400 text-sm hover:text-yellow-400 transition-colors"
-                >
-                  <Phone className="h-4 w-4 text-yellow-500" />
-                  <span>(425) 883-6006</span>
-                </a>
-                <a
-                  href="https://www.google.com/maps/search/?api=1&query=12708+Northup+Way+Bellevue+WA+98005"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => setIsOpen(false)}
-                  className="flex items-center gap-3 px-4 py-2 text-zinc-400 text-sm hover:text-yellow-400 transition-colors"
-                >
-                  <MapPin className="h-4 w-4 text-yellow-500" />
-                  <span>12708 Northup Way, Bellevue</span>
-                </a>
-                <div className="flex items-center gap-3 px-4 py-2 text-zinc-400 text-sm">
-                  <Clock className="h-4 w-4 text-yellow-500" />
-                  <span>Mon-Fri: 5AM-9PM · Sat: 7AM-6PM · Sun: 10AM-4PM</span>
+                {/* Mobile Contact Info */}
+                <div className="pt-4 mt-2 border-t border-yellow-500/20 space-y-2">
+                  <SheetClose asChild>
+                    <a
+                      href="tel:+14258836006"
+                      className="flex items-center gap-3 px-4 py-2 text-zinc-400 text-sm hover:text-yellow-400 transition-colors"
+                    >
+                      <Phone className="h-4 w-4 text-yellow-500" />
+                      <span>(425) 883-6006</span>
+                    </a>
+                  </SheetClose>
+                  <SheetClose asChild>
+                    <a
+                      href="https://www.google.com/maps/search/?api=1&query=12708+Northup+Way+Bellevue+WA+98005"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 px-4 py-2 text-zinc-400 text-sm hover:text-yellow-400 transition-colors"
+                    >
+                      <MapPin className="h-4 w-4 text-yellow-500" />
+                      <span>12708 Northup Way, Bellevue</span>
+                    </a>
+                  </SheetClose>
+                  <div className="flex items-center gap-3 px-4 py-2 text-zinc-400 text-sm">
+                    <Clock className="h-4 w-4 text-yellow-500" />
+                    <span>Mon-Fri: 5AM-9PM · Sat: 7AM-6PM · Sun: 10AM-4PM</span>
+                  </div>
                 </div>
               </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            </SheetContent>
+          </Sheet>
+        </div>
+      </div>
     </nav>
   );
 }
