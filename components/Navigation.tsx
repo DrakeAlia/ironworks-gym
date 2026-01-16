@@ -10,7 +10,10 @@ import {
   SheetTrigger,
   SheetContent,
   SheetClose,
+  SheetTitle,
+  SheetDescription,
 } from "@/components/ui/sheet";
+import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
 
 export default function Navigation() {
   const pathname = usePathname();
@@ -116,6 +119,10 @@ export default function Navigation() {
               </button>
             </SheetTrigger>
             <SheetContent side="right" className="bg-zinc-950 border-l border-yellow-500/20 p-6">
+              <VisuallyHidden.Root>
+                <SheetTitle>Navigation Menu</SheetTitle>
+                <SheetDescription>Main navigation links and contact information</SheetDescription>
+              </VisuallyHidden.Root>
               <div className="space-y-2">
                 {navLinks.map((link) => {
                   const isActive = pathname === link.href;
