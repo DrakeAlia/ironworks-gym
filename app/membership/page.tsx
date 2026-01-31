@@ -91,7 +91,7 @@ export default function Membership() {
     {
       src: "/images/gym-interior.jpg",
       alt: "Panoramic view of Iron Works Gym interior",
-      label: "The Forge Floor",
+      label: "The Gym Floor",
     },
   ];
 
@@ -159,7 +159,7 @@ export default function Membership() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 px-4">
-              Inside the <span className="text-yellow-500">Forge</span>
+              Inside the <span className="text-yellow-500">Gym</span>
             </h2>
             <p className="text-lg sm:text-xl text-zinc-400 max-w-3xl mx-auto px-4">
               Tour the spaces that make Iron Works Gym a Bellevue staple—from dumbbell rows to the suspension zone.
