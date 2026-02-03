@@ -45,15 +45,6 @@ export default function Membership() {
     "Plus Washington State sales tax @ 10.3%",
   ];
 
-  const corporatePlan = {
-    description: "Corporate Memberships (6+ people)",
-    price: "$39.99* per member",
-    bullets: [
-      "Applied to companies with six or more people",
-      "*Plus Washington State sales tax @ 10.3%",
-    ],
-  };
-
   const policies = [
     {
       title: "Membership Pause Policy",
@@ -98,7 +89,7 @@ export default function Membership() {
   const faqs = [
     {
       question: "What equipment do you have?",
-      answer: "Iron Works features premium equipment from Atlas, Hammer Strength, Life Fitness, and CB Equipment. We also have plate-loaded machines, cable stations, cardio equipment, TRX suspension systems, kettlebells, medicine balls, and dedicated stretching areas.",
+      answer: "Iron Works features premium equipment from Atlantis, Hammer Strength, Life Fitness, and Cybex Equipment. We also have plate-loaded machines, cable stations, cardio equipment, TRX suspension systems, kettlebells, medicine balls, and dedicated stretching areas.",
     },
     {
       question: "Do you offer personal training?",
@@ -252,31 +243,31 @@ export default function Membership() {
                 ))}
               </div>
             </motion.div>
-
-            {/* Corporate Memberships */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-zinc-900 border border-yellow-500/20 rounded-2xl p-8"
-            >
-              <p className="text-xs uppercase tracking-[0.3em] text-yellow-400 mb-3">
-                Corporate Memberships
-              </p>
-              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">Team Training</h3>
-              <p className="text-zinc-400 text-sm mb-4">{corporatePlan.description}</p>
-              <p className="text-3xl sm:text-4xl font-bold text-yellow-400 mb-6">{corporatePlan.price}</p>
-              <ul className="space-y-4">
-                {corporatePlan.bullets.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm text-zinc-300">
-                    <Check className="h-5 w-5 text-yellow-500 flex-shrink-0 mt-0.5" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
           </div>
+
+          {/* Purchase Note */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mt-12 max-w-4xl mx-auto"
+          >
+            <div className="bg-zinc-900/50 border border-yellow-500/30 rounded-xl p-6 text-center space-y-6">
+              <p className="text-zinc-300 text-sm sm:text-base leading-relaxed">
+                <span className="text-yellow-400 font-semibold">Note:</span> Term memberships available for purchase online or in-person. Monthly memberships available for purchase in-person.
+              </p>
+              <Link
+                href="https://guru.gyminsight.com/join/sxmkOyeKqKn9xy8"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center px-8 py-4 bg-yellow-500 text-zinc-950 font-semibold rounded-lg hover:bg-yellow-400 transition-all duration-300 hover:shadow-lg hover:shadow-yellow-500/25 text-base min-h-[44px]"
+              >
+                Sign Up Online
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -345,7 +336,7 @@ export default function Membership() {
               <Dumbbell className="h-12 w-12 text-yellow-500 mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-2">Premium Equipment</h3>
               <p className="text-zinc-400 text-sm">
-                Featuring Atlas, Hammer Strength, Life Fitness, and CB Equipment
+                Featuring Atlantis, Hammer Strength, Life Fitness, and Cybex Equipment
               </p>
             </div>
             <div className="bg-zinc-950 border border-yellow-500/20 rounded-lg p-6 text-center">
