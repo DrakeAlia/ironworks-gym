@@ -153,7 +153,7 @@ export default function Membership() {
               Inside the <span className="text-yellow-500">Gym</span>
             </h2>
             <p className="text-lg sm:text-xl text-zinc-400 max-w-3xl mx-auto px-4">
-              Tour the spaces that make Iron Works Gym a Bellevue staple—from dumbbell rows to the suspension zone.
+              Tour the spaces that make Iron Works Gym a Bellevue staple&mdash;from dumbbell rows to the suspension zone.
             </p>
           </motion.div>
 

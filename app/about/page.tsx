@@ -16,7 +16,7 @@ import {
   DialogContent,
   DialogClose,
 } from "@/components/ui/dialog";
-import { X } from "lucide-react";
+import { X, CheckCircle2 } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import CtaSection from "@/components/CtaSection";
 
@@ -97,7 +97,7 @@ export default function About() {
   return (
     <div className="bg-zinc-950">
       {/* Hero Section */}
-      <section className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section className="relative py-16 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-yellow-500/10 via-transparent to-zinc-950" />
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <motion.div
@@ -105,15 +105,15 @@ export default function About() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <p className="text-yellow-500 font-semibold uppercase tracking-[0.3em] mb-4">
+            <p className="text-yellow-500 font-semibold uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-4 text-sm">
               Since 1974
             </p>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 px-4">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 px-2 sm:px-4 leading-tight">
               About <span className="text-yellow-500">Us</span>
             </h1>
-            <p className="text-lg sm:text-xl text-zinc-300 max-w-2xl mx-auto px-4">
+            <p className="text-base sm:text-lg md:text-xl text-zinc-300 max-w-2xl mx-auto px-2 sm:px-4 leading-relaxed">
               Iron Works Gym is the Eastside&apos;s original hardcore training
-              ground—rooted in community, forged in grit, and focused on real
+              ground&mdash;rooted in community, forged in grit, and focused on real
               results.
             </p>
           </motion.div>
@@ -121,9 +121,9 @@ export default function About() {
       </section>
 
       {/* Gallery Row */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8">
+      <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
             {galleryImages.map((image, index) => (
               <motion.div
                 key={image.src}
@@ -177,61 +177,176 @@ export default function About() {
         </DialogContent>
       </Dialog>
 
-      {/* Two Column Story */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-zinc-900/40">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
+      {/* About Content Sections */}
+      <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-zinc-900/40">
+        <div className="max-w-4xl mx-auto space-y-12 sm:space-y-16">
+          {/* About Ironworks Gym */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="space-y-6"
+            className="space-y-4 sm:space-y-6"
           >
-            <h2 className="text-3xl font-bold text-white">
-              Built for Every Athlete
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight">
+              About <span className="text-yellow-500">Ironworks Gym</span>
             </h2>
-            <p className="text-zinc-300 text-lg leading-relaxed">
-              IRONWORKS Gym is an established institution among the
-              Eastside&apos;s gyms and fitness centers. Many gyms have come and
-              gone, but IronWorks is here to stay, remaining an integral part of
-              the fitness community.
+            <p className="text-zinc-300 text-base sm:text-lg leading-relaxed">
+              For over 50 years, Ironworks Gym has been supporting the Bellevue community to achieve their fitness goals. Ironworks has always been about helping people feel stronger, healthier, and more confident in their bodies, no matter where they&apos;re starting from.
             </p>
-            <p className="text-zinc-300 text-lg leading-relaxed">
-              We believe our gym is unique because it caters to a diverse group
-              of individuals with varying fitness goals. Whether you need to
-              tone up, slim down, or prepare for the next big race or show,
-              IronWorks has both the equipment, environment and trainers you
-              need to get the job done.
+            <p className="text-zinc-300 text-base sm:text-lg leading-relaxed">
+              From one generation to the next, Ironworks has remained a consistent space for real training and real connection. Our longevity comes from people&mdash;the members, coaches, and relationships that have made this gym a trusted place for decades.
             </p>
           </motion.div>
+
+          {/* Supporting Real Goals */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="space-y-6"
+            className="space-y-4 sm:space-y-6"
           >
-            <h2 className="text-3xl font-bold text-white">
-              Spaces That Elevate Training
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight">
+              Supporting <span className="text-yellow-500">Real Goals</span>
             </h2>
-            <p className="text-zinc-300 text-lg leading-relaxed">
-              Our spacious facility incorporates separate rooms for cardio
-              training, circuit training, stretching, and free weights.
-              We&apos;re confident you&apos;ll always find the right equipment
-              for your workout.
+            <p className="text-zinc-300 text-base sm:text-lg leading-relaxed">
+              Everyone who walks through our doors has a different goal. Some want to get stronger. Some want to move better, feel healthier, or rebuild consistency. Others simply want a place that helps them take care of themselves.
             </p>
-            <p className="text-zinc-300 text-lg leading-relaxed">
-              IRONWORKS provides our members with resources to achieve their
-              personal health goals, which include strengthening the foundation
-              of mind, body, and spirit. We provide a learning environment,
-              setting standards of excellence in our community.
+            <p className="text-zinc-300 text-base sm:text-lg leading-relaxed">
+              Ironworks is designed to support you through every stage of your fitness journey. Whether you&apos;re brand new to training, returning after time away, or continuing a long-term practice, you&apos;ll find a welcoming environment where effort is respected and growth is encouraged.
+            </p>
+          </motion.div>
+
+          {/* More Than Workouts */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="space-y-4 sm:space-y-6"
+          >
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight">
+              More Than <span className="text-yellow-500">Workouts</span>
+            </h2>
+            <p className="text-zinc-300 text-base sm:text-lg leading-relaxed">
+              Ironworks is more than a place to exercise. It&apos;s a space where people build self-trust, resilience, and confidence through movement.
+            </p>
+            <p className="text-zinc-300 text-base sm:text-lg leading-relaxed">
+              Progress here isn&apos;t just measured in numbers, but in how you feel&mdash;stronger, more capable, and more connected to yourself.
+            </p>
+          </motion.div>
+
+          {/* Who We're For */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="space-y-6 sm:space-y-8"
+          >
+            <div className="text-center">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 sm:mb-4 leading-tight px-2">
+                Who <span className="text-yellow-500">We&apos;re For</span>
+              </h2>
+              <p className="text-zinc-400 text-sm sm:text-base md:text-lg px-2">
+                Ironworks is for:
+              </p>
+            </div>
+            <div className="grid grid-cols-1 gap-3 sm:gap-4">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="group flex items-start gap-3 sm:gap-4 bg-zinc-900/50 border border-yellow-500/20 rounded-xl p-5 sm:p-6 hover:border-yellow-500/40 hover:bg-zinc-900/70 transition-all duration-300 min-h-[60px]"
+              >
+                <div className="flex-shrink-0 mt-1">
+                  <CheckCircle2 className="h-5 w-5 sm:h-6 sm:w-6 text-yellow-500 transition-transform group-hover:scale-110 duration-300" />
+                </div>
+                <p className="text-zinc-200 text-sm sm:text-base md:text-lg leading-relaxed">
+                  People who want sustainable and long-term results
+                </p>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="group flex items-start gap-3 sm:gap-4 bg-zinc-900/50 border border-yellow-500/20 rounded-xl p-5 sm:p-6 hover:border-yellow-500/40 hover:bg-zinc-900/70 transition-all duration-300 min-h-[60px]"
+              >
+                <div className="flex-shrink-0 mt-1">
+                  <CheckCircle2 className="h-5 w-5 sm:h-6 sm:w-6 text-yellow-500 transition-transform group-hover:scale-110 duration-300" />
+                </div>
+                <p className="text-zinc-200 text-sm sm:text-base md:text-lg leading-relaxed">
+                  Those tired of crowded commercial gyms with no soul
+                </p>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                className="group flex items-start gap-3 sm:gap-4 bg-zinc-900/50 border border-yellow-500/20 rounded-xl p-5 sm:p-6 hover:border-yellow-500/40 hover:bg-zinc-900/70 transition-all duration-300 min-h-[60px]"
+              >
+                <div className="flex-shrink-0 mt-1">
+                  <CheckCircle2 className="h-5 w-5 sm:h-6 sm:w-6 text-yellow-500 transition-transform group-hover:scale-110 duration-300" />
+                </div>
+                <p className="text-zinc-200 text-sm sm:text-base md:text-lg leading-relaxed">
+                  Anyone ready to commit to their health and strength
+                </p>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="group flex items-start gap-3 sm:gap-4 bg-zinc-900/50 border border-yellow-500/20 rounded-xl p-5 sm:p-6 hover:border-yellow-500/40 hover:bg-zinc-900/70 transition-all duration-300 min-h-[60px]"
+              >
+                <div className="flex-shrink-0 mt-1">
+                  <CheckCircle2 className="h-5 w-5 sm:h-6 sm:w-6 text-yellow-500 transition-transform group-hover:scale-110 duration-300" />
+                </div>
+                <p className="text-zinc-200 text-sm sm:text-base md:text-lg leading-relaxed">
+                  Beginners, experienced lifters, and everyone in between
+                </p>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                className="group flex items-start gap-3 sm:gap-4 bg-zinc-900/50 border border-yellow-500/20 rounded-xl p-5 sm:p-6 hover:border-yellow-500/40 hover:bg-zinc-900/70 transition-all duration-300 min-h-[60px]"
+              >
+                <div className="flex-shrink-0 mt-1">
+                  <CheckCircle2 className="h-5 w-5 sm:h-6 sm:w-6 text-yellow-500 transition-transform group-hover:scale-110 duration-300" />
+                </div>
+                <p className="text-zinc-200 text-sm sm:text-base md:text-lg leading-relaxed">
+                  Those who want to feel part of a community that rises together
+                </p>
+              </motion.div>
+            </div>
+          </motion.div>
+
+          {/* Our Commitment */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="space-y-4 sm:space-y-6"
+          >
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight">
+              Our <span className="text-yellow-500">Commitment</span>
+            </h2>
+            <p className="text-zinc-300 text-base sm:text-lg leading-relaxed">
+              Our commitment is to continue offering what Ironworks has always stood for: a gym where fitness feels approachable, progress is sustainable, and people are supported for the long run. Ironworks Gym has been helping people on their fitness journeys for over 50 years&mdash;and we&apos;d love to support you on yours.
             </p>
           </motion.div>
         </div>
       </section>
 
       {/* Image Carousel */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8">
+      <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8">
         <div className="w-full relative">
           <Carousel
             setApi={setApi}
@@ -244,7 +359,7 @@ export default function About() {
             <CarouselContent className="-ml-0">
               {carouselImages.map((image, index) => (
                 <CarouselItem key={index} className="pl-0 basis-full">
-                  <div className="relative w-full aspect-[16/9] rounded-3xl overflow-hidden border border-yellow-500/20 bg-zinc-900">
+                  <div className="relative w-full aspect-[4/3] sm:aspect-[16/9] rounded-2xl sm:rounded-3xl overflow-hidden border border-yellow-500/20 bg-zinc-900">
                     {loadingImages[image.src] !== false && (
                       <Skeleton className="absolute inset-0" />
                     )}
@@ -262,8 +377,8 @@ export default function About() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="!left-2 sm:!left-4 bg-zinc-950/70 text-white hover:text-yellow-400 border-yellow-500/20 hover:border-yellow-500/60 z-10 transition-all duration-300 h-10 w-10 sm:h-12 sm:w-12" />
-            <CarouselNext className="!right-2 sm:!right-4 bg-zinc-950/70 text-white hover:text-yellow-400 border-yellow-500/20 hover:border-yellow-500/60 z-10 transition-all duration-300 h-10 w-10 sm:h-12 sm:w-12" />
+            <CarouselPrevious className="!left-2 sm:!left-4 bg-zinc-950/80 text-white hover:text-yellow-400 border-yellow-500/30 hover:border-yellow-500/60 z-10 transition-all duration-300 h-12 w-12 sm:h-14 sm:w-14" />
+            <CarouselNext className="!right-2 sm:!right-4 bg-zinc-950/80 text-white hover:text-yellow-400 border-yellow-500/30 hover:border-yellow-500/60 z-10 transition-all duration-300 h-12 w-12 sm:h-14 sm:w-14" />
           </Carousel>
           {/* Dot Indicators */}
           <div className="flex justify-center items-center gap-2 mt-6">
@@ -284,79 +399,6 @@ export default function About() {
               </button>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Tim Ennis Legacy Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-zinc-900/60">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 px-4">
-              Tim Ennis Legacy
-            </h2>
-            <p className="text-base sm:text-lg text-zinc-400 max-w-3xl mx-auto px-4">
-              Honoring the former owner who shaped generations of athletes and
-              set the tone for Iron Works Gym&apos;s future.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="bg-gradient-to-r from-yellow-500/10 to-yellow-600/10 border border-yellow-500/30 rounded-3xl p-6 sm:p-8 md:p-10"
-          >
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {/* Photo */}
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="relative aspect-[3/4] overflow-hidden rounded-2xl border border-yellow-500/30"
-              >
-                <Image
-                  src="/images/trainers/Iron Works-tim.jpg"
-                  alt="Tim Ennis - Former Owner of Iron Works Gym"
-                  fill
-                  className="object-cover object-top"
-                  sizes="(min-width: 1024px) 50vw, 100vw"
-                />
-              </motion.div>
-              {/* Text Content */}
-              <div className="flex-1 space-y-3">
-                <p className="text-sm uppercase tracking-[0.3em] text-yellow-400">
-                  Former Gym Owner
-                </p>
-                <h3 className="text-2xl sm:text-3xl font-bold text-white">
-                  Tim Ennis
-                </h3>
-                <p className="text-zinc-200 leading-relaxed">
-                  Tim&apos;s journey in the fitness industry began in 1984, and
-                  in 1994, he became the Owner &amp; President of Iron Works
-                  Gym. A Bellevue native and Sammamish High School alum, Tim was
-                  a varsity gymnast who transitioned into competitive
-                  bodybuilding after high school, ultimately becoming a national
-                  bodybuilding judge.
-                </p>
-                <p className="text-zinc-200 leading-relaxed">
-                  For over three decades, he developed and shared his personal
-                  training and nutrition systems, fostering a supportive and
-                  results-driven community at Iron Works Gym. In 2024, after 30
-                  years of dedication, Tim entrusted the legacy of Iron Works
-                  Gym to its new owner, Rohit, who is committed to building on
-                  the strong foundation Tim created.
-                </p>
-              </div>
-            </div>
-          </motion.div>
         </div>
       </section>
 

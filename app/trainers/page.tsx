@@ -29,12 +29,13 @@ const rohit: Trainer = {
   name: "Rohit Nadkarni",
   role: "Gym Owner & Trainer",
   image: "/images/trainers/Iron Works-rohit.jpg",
+  email: "ironworksgymbellevuemgr@gmail.com",
   bio: "Health and fitness is my greatest passion in life. Nothing is more rewarding to me than empowering individuals to find their inner strength and achieve their goals. Prior to becoming the owner of Iron Works, I gained tremendous experience managing gyms and training clients within the fitness industry. I look forward and am honored to carry on the legacy Iron Works has set forth for the past 50+ years.",
 };
 
 const timEnnis: Trainer = {
   name: "Tim Ennis",
-  role: "Manager & Operator",
+  role: "Manager & Trainer",
   image: "/images/trainers/Iron Works-tim.jpg",
   phone: "425-883-6006",
   specialty: "Owning Selected Physique",
@@ -109,16 +110,21 @@ const trainers: Trainer[] = [
     role: "Trainer",
     image: "/images/trainers/Iron Works-nicholas.jpg",
     phone: "512-529-7234",
-    bio: "I specialize in body composition, strength, and long-term health for adults with demanding schedules. My work centers on efficient training, sustainable nutrition, and clear accountability—delivering measurable results without burnout. I focus on simple, repeatable systems that help clients build muscle, lose fat, and maintain progress over time.",
+    bio: "I specialize in body composition, strength, and long-term health for adults with demanding schedules. My work centers on efficient training, sustainable nutrition, and clear accountability&mdash;delivering measurable results without burnout. I focus on simple, repeatable systems that help clients build muscle, lose fat, and maintain progress over time.",
     specialty: "Body Composition & Strength",
   },
 ];
 
 export default function Trainers() {
   const [loadingImages, setLoadingImages] = useState<Record<string, boolean>>({});
+  const [expandedBios, setExpandedBios] = useState<Record<string, boolean>>({});
 
   const handleImageLoad = (trainerName: string) => {
     setLoadingImages((prev) => ({ ...prev, [trainerName]: false }));
+  };
+
+  const toggleBio = (trainerName: string) => {
+    setExpandedBios((prev) => ({ ...prev, [trainerName]: !prev[trainerName] }));
   };
 
   return (
@@ -160,11 +166,9 @@ export default function Trainers() {
               <div className="p-6 sm:p-8 md:p-12 flex flex-col justify-center text-center">
                 <Quote className="h-8 w-8 text-yellow-500 mb-4 mx-auto" />
                 <blockquote className="text-lg sm:text-xl md:text-2xl text-zinc-200 leading-relaxed mb-6">
-                  &quot;I am very impressed with the staff. The attention is
-                  given to keeping the gym clean and everyone safe is
-                  exceptional&quot;
+                  &quot;The staff and trainers are genuinely professional, incredibly friendly, and highly knowledgeable. They create an environment that is welcoming and motivating, not intimidating.&quot;
                 </blockquote>
-                <p className="text-yellow-400 font-semibold">- Pete D.</p>
+                <p className="text-yellow-400 font-semibold">- Gowri</p>
               </div>
             </div>
           </motion.div>
@@ -204,9 +208,20 @@ export default function Trainers() {
                   {rohit.role}
                 </p>
                 {rohit.bio && (
-                  <p className="text-zinc-300 text-base sm:text-lg leading-relaxed">
+                  <p className="text-zinc-300 text-base sm:text-lg leading-relaxed mb-6">
                     {rohit.bio}
                   </p>
+                )}
+                {rohit.email && (
+                  <div className="flex items-center gap-3 text-zinc-300">
+                    <Mail className="h-5 w-5 text-yellow-500" />
+                    <a
+                      href={`mailto:${rohit.email}`}
+                      className="hover:text-yellow-400 transition-colors text-lg break-all"
+                    >
+                      {rohit.email}
+                    </a>
+                  </div>
                 )}
               </div>
             </div>
@@ -318,9 +333,19 @@ export default function Trainers() {
                     </div>
                   )}
                   {trainer.bio && (
-                    <p className="text-zinc-300 mb-4 leading-relaxed text-sm line-clamp-3">
-                      {trainer.bio}
-                    </p>
+                    <div className="mb-4">
+                      <p className={`text-zinc-300 leading-relaxed text-sm ${expandedBios[trainer.name] ? '' : 'line-clamp-3'}`}>
+                        {trainer.bio}
+                      </p>
+                      {trainer.bio.length > 150 && (
+                        <button
+                          onClick={() => toggleBio(trainer.name)}
+                          className="text-yellow-500 hover:text-yellow-400 text-sm font-semibold mt-2 transition-colors"
+                        >
+                          {expandedBios[trainer.name] ? 'Show less' : 'Read more'}
+                        </button>
+                      )}
+                    </div>
                   )}
                   <div className="flex flex-col gap-2 mt-auto">
                     {trainer.phone && (

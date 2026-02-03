@@ -45,18 +45,24 @@ export default function Home() {
 
   const testimonials = [
     {
-      name: "Steve S.",
-      content: "IRONWORKS gym is the real deal.",
+      name: "Gowri",
+      content:
+        "Ironworks is truly a gem for anyone in Bellevue looking to build a sustainable, healthy routine and lifestyle... They have all the necessary, top-quality equipment you could ever need. The staff and trainers are genuinely professional, incredibly friendly, and highly knowledgeable. They create an environment that is welcoming and motivating, not intimidating.",
     },
     {
-      name: "Mike N.",
+      name: "Juli",
       content:
-        "The trainers & staff at IRONWORKS are the best - hands down. Look no further.",
+        "It's a place where people are very serious and intense about their workouts while also being very encouraging and welcoming. It's a community of awesome individuals doing amazing work... It doesn't matter if you are big or small, lifting heavy or light, you are respected because you showed up.",
     },
     {
-      name: "Pete D.",
+      name: "Justin",
       content:
-        "I am very impressed with the staff. The attention given to keeping the gym clean and everyone safe is exceptional.",
+        "The BEST gym on the Eastside. No frills but every piece of equipment you can ever desire. Amazing prices. I can't imagine Bellevue without Ironworks!!",
+    },
+    {
+      name: "Ryan",
+      content:
+        "What sets Iron Works apart isn't just its impressive range of equipment... but also the subtle ways it creates a space where everyone feels like they belong. Iron Works isn't just a gym; it's a cornerstone of a community where every individual is celebrated for who they are.",
     },
   ];
 
@@ -326,7 +332,7 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {testimonials.map((testimonial, index) => (
               <motion.div
                 key={testimonial.name}

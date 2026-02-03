@@ -33,7 +33,7 @@ export default function Navigation() {
           <div className="flex items-center justify-center gap-6 text-xs text-zinc-400">
             <div className="flex items-center gap-2">
               <Clock className="h-4 w-4 text-yellow-500" />
-              <span>Mon-Fri: 5AM-9PM · Sat: 7AM-6PM · Sun: 10AM-4PM</span>
+              <span>Mon-Fri: 5AM-9PM &middot; Sat: 7AM-6PM &middot; Sun: 10AM-4PM</span>
             </div>
             <a
               href="tel:+14258836006"
@@ -174,7 +174,7 @@ export default function Navigation() {
                   </SheetClose>
                   <div className="flex items-center gap-3 px-4 py-2 text-zinc-400 text-sm">
                     <Clock className="h-4 w-4 text-yellow-500" />
-                    <span>Mon-Fri: 5AM-9PM · Sat: 7AM-6PM · Sun: 10AM-4PM</span>
+                    <span>Mon-Fri: 5AM-9PM &middot; Sat: 7AM-6PM &middot; Sun: 10AM-4PM</span>
                   </div>
                 </div>
               </div>

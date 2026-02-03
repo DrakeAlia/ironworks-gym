@@ -36,7 +36,7 @@ export default function CtaSection() {
             </a>
           </div>
           <p className="text-zinc-500 text-sm mt-6">
-            Mon-Fri: 5 AM - 9 PM · Sat: 7 AM - 6 PM · Sun: 10 AM - 4 PM
+            Mon-Fri: 5 AM - 9 PM &middot; Sat: 7 AM - 6 PM &middot; Sun: 10 AM - 4 PM
           </p>
         </motion.div>
       </div>
