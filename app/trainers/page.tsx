@@ -138,10 +138,10 @@ export default function Trainers() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-white px-4">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white px-4 leading-tight">
               Our <span className="text-yellow-500">Trainers</span>
             </h1>
-            <p className="text-lg sm:text-xl text-zinc-300 max-w-3xl mx-auto leading-relaxed px-4">
+            <p className="text-base sm:text-lg md:text-xl text-zinc-300 max-w-3xl mx-auto leading-relaxed px-4">
               Our trainers will help you build a safe and efficient workout plan
               to suit your fitness goals. All of our Personal Trainers meet
               nationally recognized certification standards for fitness. Give us

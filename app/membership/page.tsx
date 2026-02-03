@@ -149,10 +149,10 @@ export default function Membership() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 px-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 px-4 leading-tight">
               Inside the <span className="text-yellow-500">Gym</span>
             </h2>
-            <p className="text-lg sm:text-xl text-zinc-400 max-w-3xl mx-auto px-4">
+            <p className="text-base sm:text-lg md:text-xl text-zinc-400 max-w-3xl mx-auto px-4 leading-relaxed">
               Tour the spaces that make Iron Works Gym a Bellevue staple&mdash;from dumbbell rows to the suspension zone.
             </p>
           </motion.div>
@@ -189,15 +189,15 @@ export default function Membership() {
 
       {/* Pricing Plans */}
       <section className="py-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-stretch">
             {/* Premium Plan */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-zinc-900 border border-yellow-500/30 rounded-2xl p-8 shadow-xl shadow-yellow-500/10"
+              className="bg-zinc-900 border border-yellow-500/30 rounded-2xl p-8 shadow-xl shadow-yellow-500/10 flex flex-col"
             >
               <p className="text-xs uppercase tracking-[0.3em] text-yellow-400 mb-3">
                 {premiumPlan.subtitle}
@@ -223,7 +223,7 @@ export default function Membership() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="bg-zinc-900 border border-yellow-500/20 rounded-2xl p-8"
+              className="bg-zinc-900 border border-yellow-500/30 rounded-2xl p-8 shadow-xl shadow-yellow-500/10 flex flex-col"
             >
               <p className="text-xs uppercase tracking-[0.3em] text-yellow-400 mb-3">
                 Term Memberships / Gym
@@ -231,9 +231,9 @@ export default function Membership() {
               <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6">Short & Long Terms</h3>
               <ul className="divide-y divide-yellow-500/10">
                 {termMemberships.map((term) => (
-                  <li key={term.label} className="flex items-center justify-between py-3">
-                    <span className="text-zinc-300">{term.label}</span>
-                    <span className="text-lg font-semibold text-white">{term.price}</span>
+                  <li key={term.label} className="flex items-center justify-between py-4">
+                    <span className="text-base sm:text-lg text-zinc-300 font-medium">{term.label}</span>
+                    <span className="text-xl sm:text-2xl font-bold text-yellow-400">{term.price}</span>
                   </li>
                 ))}
               </ul>
@@ -281,10 +281,10 @@ export default function Membership() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 px-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 px-4 leading-tight">
               Frequently Asked <span className="text-yellow-500">Questions</span>
             </h2>
-            <p className="text-lg sm:text-xl text-zinc-400 max-w-2xl mx-auto px-4">
+            <p className="text-base sm:text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto px-4 leading-relaxed">
               Everything you need to know about Iron Works Gym memberships.
             </p>
           </motion.div>
@@ -327,7 +327,7 @@ export default function Membership() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 px-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 px-4 leading-tight">
               What's <span className="text-yellow-500">Included</span>
             </h2>
           </motion.div>
@@ -367,10 +367,10 @@ export default function Membership() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 px-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 px-4 leading-tight">
               Membership <span className="text-yellow-500">Policies</span>
             </h2>
-            <p className="text-lg sm:text-xl text-zinc-400 max-w-2xl mx-auto px-4">
+            <p className="text-base sm:text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto px-4 leading-relaxed">
               Important information about your membership and gym policies.
             </p>
           </motion.div>

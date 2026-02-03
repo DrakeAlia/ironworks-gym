@@ -94,10 +94,10 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <p className="text-yellow-500 font-semibold uppercase tracking-[0.3em] mb-4">
+            <p className="text-yellow-500 font-semibold uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-4 text-sm">
               Since 1974
             </p>
-            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 text-white leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 text-white leading-tight px-2">
               Iron Works Gym
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white font-semibold mb-6 px-2">
@@ -188,10 +188,10 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 px-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 px-4 leading-tight">
               Why <span className="text-yellow-500">Iron Works</span>
             </h2>
-            <p className="text-lg sm:text-xl text-zinc-400 max-w-2xl mx-auto px-4">
+            <p className="text-base sm:text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto px-4 leading-relaxed">
               Everything you need to forge the strongest version of yourself.
             </p>
           </motion.div>

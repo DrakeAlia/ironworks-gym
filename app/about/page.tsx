@@ -18,6 +18,7 @@ import {
 } from "@/components/ui/dialog";
 import { X, CheckCircle2 } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Separator } from "@/components/ui/separator";
 import CtaSection from "@/components/CtaSection";
 
 const galleryImages = [
@@ -177,10 +178,9 @@ export default function About() {
         </DialogContent>
       </Dialog>
 
-      {/* About Content Sections */}
-      <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-zinc-900/40">
-        <div className="max-w-4xl mx-auto space-y-12 sm:space-y-16">
-          {/* About Ironworks Gym */}
+      {/* About Ironworks Gym */}
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-zinc-900/40">
+        <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -198,8 +198,14 @@ export default function About() {
               From one generation to the next, Ironworks has remained a consistent space for real training and real connection. Our longevity comes from people&mdash;the members, coaches, and relationships that have made this gym a trusted place for decades.
             </p>
           </motion.div>
+        </div>
+      </section>
 
-          {/* Supporting Real Goals */}
+      <Separator className="bg-yellow-500/10" />
+
+      {/* Supporting Real Goals */}
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -217,8 +223,14 @@ export default function About() {
               Ironworks is designed to support you through every stage of your fitness journey. Whether you&apos;re brand new to training, returning after time away, or continuing a long-term practice, you&apos;ll find a welcoming environment where effort is respected and growth is encouraged.
             </p>
           </motion.div>
+        </div>
+      </section>
 
-          {/* More Than Workouts */}
+      <Separator className="bg-yellow-500/10" />
+
+      {/* More Than Workouts */}
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-zinc-900/40">
+        <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -236,8 +248,14 @@ export default function About() {
               Progress here isn&apos;t just measured in numbers, but in how you feel&mdash;stronger, more capable, and more connected to yourself.
             </p>
           </motion.div>
+        </div>
+      </section>
 
-          {/* Who We're For */}
+      <Separator className="bg-yellow-500/10" />
+
+      {/* Who We're For */}
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -326,8 +344,14 @@ export default function About() {
               </motion.div>
             </div>
           </motion.div>
+        </div>
+      </section>
 
-          {/* Our Commitment */}
+      <Separator className="bg-yellow-500/10" />
+
+      {/* Our Commitment */}
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-zinc-900/40">
+        <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
