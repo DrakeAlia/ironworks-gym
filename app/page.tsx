@@ -21,7 +21,7 @@ export default function Home() {
       icon: Dumbbell,
       title: "Premium Equipment",
       description:
-        "Featuring Atlas, Hammer Strength, Life Fitness, and CB Equipment for all fitness levels.",
+        "Featuring Atlantis, Hammer Strength, Life Fitness, and CB Equipment for all fitness levels.",
     },
     {
       icon: Users,
