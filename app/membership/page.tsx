@@ -197,7 +197,7 @@ export default function Membership() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-zinc-900 border border-yellow-500/30 rounded-2xl p-8 shadow-xl shadow-yellow-500/10 flex flex-col"
+              className="bg-zinc-900 border border-yellow-500/30 rounded-2xl p-6 sm:p-8 shadow-xl shadow-yellow-500/10 flex flex-col"
             >
               <p className="text-xs uppercase tracking-[0.3em] text-yellow-400 mb-3">
                 {premiumPlan.subtitle}
@@ -223,7 +223,7 @@ export default function Membership() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="bg-zinc-900 border border-yellow-500/30 rounded-2xl p-8 shadow-xl shadow-yellow-500/10 flex flex-col"
+              className="bg-zinc-900 border border-yellow-500/30 rounded-2xl p-6 sm:p-8 shadow-xl shadow-yellow-500/10 flex flex-col"
             >
               <p className="text-xs uppercase tracking-[0.3em] text-yellow-400 mb-3">
                 Term Memberships / Gym
@@ -231,7 +231,7 @@ export default function Membership() {
               <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6">Short & Long Terms</h3>
               <ul className="divide-y divide-yellow-500/10">
                 {termMemberships.map((term) => (
-                  <li key={term.label} className="flex items-center justify-between py-4">
+                  <li key={term.label} className="flex items-center justify-between py-4 min-h-[44px]">
                     <span className="text-base sm:text-lg text-zinc-300 font-medium">{term.label}</span>
                     <span className="text-xl sm:text-2xl font-bold text-yellow-400">{term.price}</span>
                   </li>
@@ -332,21 +332,21 @@ export default function Membership() {
             </h2>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-zinc-950 border border-yellow-500/20 rounded-lg p-6 text-center">
+            <div className="bg-zinc-950 border border-yellow-500/20 rounded-lg p-5 sm:p-6 text-center hover:border-yellow-500/40 transition-colors duration-300">
               <Dumbbell className="h-12 w-12 text-yellow-500 mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-2">Premium Equipment</h3>
               <p className="text-zinc-400 text-sm">
                 Featuring Atlantis, Hammer Strength, Life Fitness, and Cybex Equipment
               </p>
             </div>
-            <div className="bg-zinc-950 border border-yellow-500/20 rounded-lg p-6 text-center">
+            <div className="bg-zinc-950 border border-yellow-500/20 rounded-lg p-5 sm:p-6 text-center hover:border-yellow-500/40 transition-colors duration-300">
               <Users className="h-12 w-12 text-yellow-500 mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-2">Expert Community</h3>
               <p className="text-zinc-400 text-sm">
                 Train alongside dedicated athletes and fitness enthusiasts
               </p>
             </div>
-            <div className="bg-zinc-950 border border-yellow-500/20 rounded-lg p-6 text-center">
+            <div className="bg-zinc-950 border border-yellow-500/20 rounded-lg p-5 sm:p-6 text-center hover:border-yellow-500/40 transition-colors duration-300">
               <Award className="h-12 w-12 text-yellow-500 mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-2">Proven Results</h3>
               <p className="text-zinc-400 text-sm">
@@ -385,7 +385,7 @@ export default function Membership() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="bg-zinc-900 border border-yellow-500/20 rounded-lg p-6"
               >
-                <h3 className="text-2xl font-semibold mb-4 text-yellow-500">{policy.title}</h3>
+                <h3 className="text-xl sm:text-2xl font-semibold mb-4 text-yellow-500">{policy.title}</h3>
                 <ul className="space-y-3">
                   {policy.content.map((item, idx) => (
                     <li key={idx} className="flex items-start">
