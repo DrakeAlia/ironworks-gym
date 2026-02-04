@@ -65,23 +65,23 @@ export default function Membership() {
 
   const galleryImages = [
     {
-      src: "/images/dumbbells.jpg",
-      alt: "Heavy dumbbells lined up on a rack",
-      label: "Iron Rows",
+      src: "/images/gym-cardio-area.jpg",
+      alt: "State-of-the-art cardio equipment at Iron Works Gym",
+      label: "Cardio Area",
     },
     {
-      src: "/images/kettlebells.jpg",
-      alt: "Kettlebells in an industrial training bay",
-      label: "Kettlebell Yard",
+      src: "/images/gym-machine-area.jpg",
+      alt: "Premium weight machines and strength training area",
+      label: "Machine Area",
     },
     {
-      src: "/images/trx-training.jpg",
-      alt: "Member training with TRX bands",
-      label: "Suspension Zone",
+      src: "/images/gym-entrance-lobby.jpg",
+      alt: "Welcoming entrance and lobby area at Iron Works Gym",
+      label: "Entrance Lobby",
     },
     {
-      src: "/images/gym-interior.jpg",
-      alt: "Panoramic view of Iron Works Gym interior",
+      src: "/images/acility-wide-shot.jpg",
+      alt: "Wide panoramic view of Iron Works Gym facility",
       label: "The Gym Floor",
     },
   ];
@@ -107,11 +107,11 @@ export default function Membership() {
       <section className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/treadmills.jpg"
-            alt="Iron Works Gym treadmills"
+            src="/images/acility-wide-shot.jpg"
+            alt="Wide view of Iron Works Gym facility"
             fill
             priority
-            className="object-cover"
+            className="object-cover object-center"
             sizes="100vw"
           />
         </div>

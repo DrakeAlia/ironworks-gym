@@ -23,16 +23,16 @@ import CtaSection from "@/components/CtaSection";
 
 const galleryImages = [
   {
-    src: "/images/about-gym-floor.jpg",
-    alt: "Gym floor at Iron Works Gym",
+    src: "/images/gym-entrance-lobby.jpg",
+    alt: "Welcoming entrance lobby at Iron Works Gym",
   },
   {
-    src: "/images/about-pullups.jpg",
-    alt: "Member performing pull-ups",
+    src: "/images/gym-front-desk.jpg",
+    alt: "Front desk and reception area at Iron Works Gym",
   },
   {
-    src: "/images/about-machines.jpg",
-    alt: "Training machines at Iron Works Gym",
+    src: "/images/gym-atmosphere.jpg",
+    alt: "Active training atmosphere at Iron Works Gym",
   },
 ];
 

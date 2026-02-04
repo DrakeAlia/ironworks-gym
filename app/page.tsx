@@ -368,8 +368,8 @@ export default function Home() {
       <section className="relative py-32 px-4 sm:px-6 lg:px-8 min-h-[85vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/home-hero-woman.jpg"
-            alt="Iron Works Gym member"
+            src="/images/gym-atmosphere.jpg"
+            alt="Member training at Iron Works Gym"
             fill
             className="object-cover object-center"
             sizes="100vw"

@@ -23,11 +23,11 @@ npm list sharp
 
 ### 2. Prepare Your Images
 
-Place all high-resolution images in the `updated-imgs` folder:
+Place all high-resolution images in the `public/images/updated-imgs` folder:
 
 ```bash
-# The folder is already created
-ls updated-imgs/
+# Check the folder
+ls public/images/public/images/updated-imgs/
 ```
 
 ## Usage
@@ -41,7 +41,7 @@ node optimize-images.js
 
 ### What the Script Does
 
-1. ✅ Reads all images from `updated-imgs/` folder
+1. ✅ Reads all images from `public/images/updated-imgs/` folder
 2. ✅ Resizes to max **1920px width** (maintains aspect ratio)
 3. ✅ Compresses to **80% quality** (good balance of quality/file size)
 4. ✅ Converts to progressive JPEG (better web loading)
@@ -70,10 +70,10 @@ You can customize the script by editing `optimize-images.js`:
 
 ```javascript
 const CONFIG = {
-  inputDir: './updated-imgs',       // Source folder
-  outputDir: './public/images',     // Destination folder
-  maxWidth: 1920,                   // Max width in pixels
-  quality: 80,                      // JPEG quality (1-100)
+  inputDir: './public/images/updated-imgs',  // Source folder
+  outputDir: './public/images',              // Destination folder
+  maxWidth: 1920,                            // Max width in pixels
+  quality: 80,                               // JPEG quality (1-100)
   formats: ['.jpg', '.jpeg', '.png', '.webp'],
 };
 ```
@@ -133,10 +133,10 @@ Based on your codebase, these are the current image paths:
 
 ### Step-by-Step Process
 
-1. **Add new photos to `updated-imgs/` folder**
+1. **Add new photos to `public/images/updated-imgs/` folder**
    ```bash
    # Copy your high-res images
-   cp ~/Downloads/gym-photos/*.jpg updated-imgs/
+   cp ~/Downloads/gym-photos/*.jpg public/images/updated-imgs/
    ```
 
 2. **Run the optimization script**
@@ -157,7 +157,7 @@ Based on your codebase, these are the current image paths:
 5. **Clean up (optional)**
    ```bash
    # Remove original high-res images after confirming optimization
-   rm -rf updated-imgs/*
+   rm -rf public/images/updated-imgs/*
    ```
 
 ## Best Practices
@@ -199,7 +199,7 @@ mkdir updated-imgs
 ```
 
 **Error: "No image files found"**
-- Check that images are in `updated-imgs/` folder
+- Check that images are in `public/images/updated-imgs/` folder
 - Verify file extensions (.jpg, .jpeg, .png, .webp)
 
 ### Image Quality Issues
@@ -221,15 +221,15 @@ mkdir updated-imgs
 Process specific files only:
 
 ```bash
-# Move specific files to updated-imgs/
-cp ~/Downloads/new-photo-1.jpg updated-imgs/
-cp ~/Downloads/new-photo-2.jpg updated-imgs/
+# Move specific files to public/images/updated-imgs/
+cp ~/Downloads/new-photo-1.jpg public/images/updated-imgs/
+cp ~/Downloads/new-photo-2.jpg public/images/updated-imgs/
 
 # Run optimization
 node optimize-images.js
 
 # Move back
-rm updated-imgs/*
+rm public/images/updated-imgs/*
 ```
 
 ### Different Output Formats
@@ -258,7 +258,7 @@ Edit the script to output WebP (better compression):
 ## Summary
 
 ✅ **Script Location**: `optimize-images.js`
-✅ **Input Folder**: `updated-imgs/`
+✅ **Input Folder**: `public/images/updated-imgs/`
 ✅ **Output Folder**: `public/images/`
 ✅ **Max Width**: 1920px
 ✅ **Quality**: 80%

@@ -18,7 +18,7 @@ const path = require('path');
 
 // Configuration
 const CONFIG = {
-  inputDir: './updated-imgs',
+  inputDir: './public/images/updated-imgs',
   outputDir: './public/images',
   maxWidth: 1920,
   quality: 80,

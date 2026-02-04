@@ -19,7 +19,8 @@ export default function Footer() {
               />
             </Link>
             <p className="text-zinc-400 text-sm mt-4">
-              The Gym That's Not A Health Club.<br />
+              The Gym That`&apos;`s Not A Health Club.
+              <br />
               Serving Bellevue since 1974.
             </p>
             <div className="flex space-x-4 justify-center md:justify-start">
@@ -40,22 +41,34 @@ export default function Footer() {
             <h3 className="text-white font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/" className="text-zinc-400 hover:text-yellow-500 transition-colors text-sm">
+                <Link
+                  href="/"
+                  className="text-zinc-400 hover:text-yellow-500 transition-colors text-sm"
+                >
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="text-zinc-400 hover:text-yellow-500 transition-colors text-sm">
+                <Link
+                  href="/about"
+                  className="text-zinc-400 hover:text-yellow-500 transition-colors text-sm"
+                >
                   About
                 </Link>
               </li>
               <li>
-                <Link href="/trainers" className="text-zinc-400 hover:text-yellow-500 transition-colors text-sm">
+                <Link
+                  href="/trainers"
+                  className="text-zinc-400 hover:text-yellow-500 transition-colors text-sm"
+                >
                   Trainers
                 </Link>
               </li>
               <li>
-                <Link href="/membership" className="text-zinc-400 hover:text-yellow-500 transition-colors text-sm">
+                <Link
+                  href="/membership"
+                  className="text-zinc-400 hover:text-yellow-500 transition-colors text-sm"
+                >
                   Membership
                 </Link>
               </li>
@@ -68,25 +81,32 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 text-yellow-500 mt-0.5 flex-shrink-0" />
-                <a 
+                <a
                   href="https://www.google.com/maps/search/?api=1&query=12708+Northup+Way+Bellevue+WA+98005"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-zinc-400 hover:text-yellow-500 transition-colors text-sm"
                 >
-                  12708 Northup Way<br />
+                  12708 Northup Way
+                  <br />
                   Bellevue, WA 98005
                 </a>
               </li>
               <li className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-yellow-500 flex-shrink-0" />
-                <a href="tel:+14258836006" className="text-zinc-400 hover:text-yellow-500 transition-colors text-sm">
+                <a
+                  href="tel:+14258836006"
+                  className="text-zinc-400 hover:text-yellow-500 transition-colors text-sm"
+                >
                   (425) 883-6006
                 </a>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-yellow-500 flex-shrink-0" />
-                <a href="mailto:info@ironworksgym.com" className="text-zinc-400 hover:text-yellow-500 transition-colors text-sm">
+                <a
+                  href="mailto:info@ironworksgym.com"
+                  className="text-zinc-400 hover:text-yellow-500 transition-colors text-sm"
+                >
                   info@ironworksgym.com
                 </a>
               </li>
@@ -115,7 +135,8 @@ export default function Footer() {
 
         <div className="mt-6 pt-6 border-t border-yellow-500/20">
           <p className="text-center text-zinc-500 text-sm">
-            &copy; {new Date().getFullYear()} Iron Works Gym. All rights reserved.
+            &copy; {new Date().getFullYear()} Iron Works Gym. All rights
+            reserved.
           </p>
         </div>
       </div>

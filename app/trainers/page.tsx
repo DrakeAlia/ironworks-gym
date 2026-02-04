@@ -414,16 +414,16 @@ export default function Trainers() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                src: "/images/gym-equipment-1.jpg",
-                alt: "Gym equipment at Iron Works",
+                src: "/images/gym-floor-alternate.jpg",
+                alt: "Wide view of the gym floor at Iron Works Gym",
               },
               {
-                src: "/images/gym-equipment-2.jpg",
-                alt: "Training equipment at Iron Works",
+                src: "/images/gym-machine-area.jpg",
+                alt: "Machine training area at Iron Works Gym",
               },
               {
-                src: "/images/gym-equipment-3.jpg",
-                alt: "Fitness equipment at Iron Works",
+                src: "/images/gym-cardio-area.jpg",
+                alt: "Cardio equipment area at Iron Works Gym",
               },
             ].map((image, index) => (
               <motion.div
