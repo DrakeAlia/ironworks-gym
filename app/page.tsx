@@ -135,7 +135,7 @@ export default function Home(_props: PageProps) {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-zinc-900/40">
+      <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-zinc-900/40">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 lg:gap-12 max-w-4xl mx-auto">
             {[
@@ -221,7 +221,7 @@ export default function Home(_props: PageProps) {
                   <h3 className="text-xl font-semibold mb-2">
                     {feature.title}
                   </h3>
-                  <p className="text-zinc-400">{feature.description}</p>
+                  <p className="text-zinc-400 text-sm sm:text-base leading-relaxed">{feature.description}</p>
                 </motion.div>
               );
             })}
@@ -265,7 +265,7 @@ export default function Home(_props: PageProps) {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="text-white"
+              className="text-white text-center lg:text-left"
             >
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed px-4">
                 Since 1974, Iron Works has been more than a gym &mdash; it&apos;s a

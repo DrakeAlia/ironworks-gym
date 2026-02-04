@@ -204,12 +204,12 @@ export default function Membership(_props: PageProps) {
               </p>
               <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">{premiumPlan.title}</h3>
               <p className="text-4xl sm:text-5xl font-extrabold text-yellow-400 mb-6">{premiumPlan.price}</p>
-              <p className="text-zinc-400 text-sm mb-6">
+              <p className="text-zinc-400 text-sm sm:text-base mb-6 leading-relaxed">
                 Monthly dues per member. Family add-on specials available at point of sale.
               </p>
               <ul className="space-y-4">
                 {premiumPlan.bullets.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm text-zinc-300">
+                  <li key={item} className="flex items-start gap-3 text-sm sm:text-base text-zinc-300 leading-relaxed">
                     <Check className="h-5 w-5 text-yellow-500 flex-shrink-0 mt-0.5" />
                     <span>{item}</span>
                   </li>
@@ -335,21 +335,21 @@ export default function Membership(_props: PageProps) {
             <div className="bg-zinc-950 border border-yellow-500/20 rounded-lg p-5 sm:p-6 text-center hover:border-yellow-500/40 transition-colors duration-300">
               <Dumbbell className="h-12 w-12 text-yellow-500 mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-2">Premium Equipment</h3>
-              <p className="text-zinc-400 text-sm">
+              <p className="text-zinc-400 text-sm sm:text-base leading-relaxed">
                 Featuring Atlantis, Hammer Strength, Life Fitness, and Cybex Equipment
               </p>
             </div>
             <div className="bg-zinc-950 border border-yellow-500/20 rounded-lg p-5 sm:p-6 text-center hover:border-yellow-500/40 transition-colors duration-300">
               <Users className="h-12 w-12 text-yellow-500 mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-2">Expert Community</h3>
-              <p className="text-zinc-400 text-sm">
+              <p className="text-zinc-400 text-sm sm:text-base leading-relaxed">
                 Train alongside dedicated athletes and fitness enthusiasts
               </p>
             </div>
             <div className="bg-zinc-950 border border-yellow-500/20 rounded-lg p-5 sm:p-6 text-center hover:border-yellow-500/40 transition-colors duration-300">
               <Award className="h-12 w-12 text-yellow-500 mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-2">Proven Results</h3>
-              <p className="text-zinc-400 text-sm">
+              <p className="text-zinc-400 text-sm sm:text-base leading-relaxed">
                 Join thousands who have achieved their fitness goals
               </p>
             </div>
@@ -390,7 +390,7 @@ export default function Membership(_props: PageProps) {
                   {policy.content.map((item, idx) => (
                     <li key={idx} className="flex items-start">
                       <Clock className="h-5 w-5 text-yellow-500/50 mr-3 flex-shrink-0 mt-0.5" />
-                      <span className="text-zinc-300 text-sm leading-relaxed">{item}</span>
+                      <span className="text-zinc-300 text-sm sm:text-base leading-relaxed">{item}</span>
                     </li>
                   ))}
                 </ul>
