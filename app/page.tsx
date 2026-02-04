@@ -15,7 +15,12 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import CtaSection from "@/components/CtaSection";
 
-export default function Home() {
+type PageProps = {
+  params: Promise<{ [key: string]: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+};
+
+export default function Home(_props: PageProps) {
   const features = [
     {
       icon: Dumbbell,
@@ -226,14 +231,14 @@ export default function Home() {
 
       <Separator className="bg-yellow-500/20" />
 
-      {/* Functional Fitness Section */}
+      {/* Community & Brand Section */}
       <section className="relative py-24 px-4 sm:px-6 lg:px-8 min-h-[60vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/home-functional-training.jpg"
-            alt="Functional training at Iron Works"
+            src="/images/gym-branded-shirt.jpg"
+            alt="Iron Works Gym community and culture"
             fill
-            className="object-cover"
+            className="object-cover object-center"
             sizes="100vw"
           />
         </div>
@@ -263,10 +268,9 @@ export default function Home() {
               className="text-white"
             >
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed px-4">
-                With everything from the TRX Suspension Training, to
-                kettlebells, medicine balls, multi-height steps, to a functional
-                ladder training system, Ironworks is your destination for
-                functional fitness.
+                Since 1974, Iron Works has been more than a gym &mdash; it&apos;s a
+                community where dedicated athletes and everyday lifters train
+                together. Join Bellevue&apos;s most authentic training culture.
               </p>
             </motion.div>
           </div>
@@ -279,10 +283,10 @@ export default function Home() {
       <section className="relative py-24 px-4 sm:px-6 lg:px-8 min-h-[60vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/carousel-squat.jpg"
-            alt="Personal trainers at Iron Works"
+            src="/images/trainer-client-shoulders.jpg"
+            alt="Personal trainer coaching client at Iron Works Gym"
             fill
-            className="object-cover object-top"
+            className="object-cover object-center"
             sizes="100vw"
           />
         </div>

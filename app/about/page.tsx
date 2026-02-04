@@ -21,6 +21,11 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { Separator } from "@/components/ui/separator";
 import CtaSection from "@/components/CtaSection";
 
+type PageProps = {
+  params: Promise<{ [key: string]: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+};
+
 const galleryImages = [
   {
     src: "/images/gym-entrance-lobby.jpg",
@@ -31,8 +36,8 @@ const galleryImages = [
     alt: "Front desk and reception area at Iron Works Gym",
   },
   {
-    src: "/images/gym-atmosphere.jpg",
-    alt: "Active training atmosphere at Iron Works Gym",
+    src: "/images/gym-building-front.jpg",
+    alt: "Iron Works Gym exterior and location in Bellevue",
   },
 ];
 
@@ -59,7 +64,7 @@ const carouselImages = [
   },
 ];
 
-export default function About() {
+export default function About(_props: PageProps) {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
   const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string } | null>(null);
@@ -368,6 +373,38 @@ export default function About() {
           </motion.div>
         </div>
       </section>
+
+      {/* Team & Community Culture Section */}
+      <section className="relative py-24 px-4 sm:px-6 lg:px-8 min-h-[70vh] flex items-center overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/staff-training-together.jpg"
+            alt="Iron Works Gym trainers coaching and working together"
+            fill
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+        </div>
+        <div className="absolute inset-0 bg-zinc-950/60" />
+        <div className="relative z-10 max-w-4xl mx-auto text-center w-full">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="space-y-6"
+          >
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 px-4 leading-tight">
+              Expert <span className="text-yellow-500">Coaching</span> &amp; Community
+            </h2>
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-zinc-200 leading-relaxed max-w-3xl mx-auto px-4">
+              Our experienced trainers are here to guide you, support your progress, and help you build sustainable strength. At Iron Works, you&apos;re part of a team committed to real results and lasting change.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      <Separator className="bg-yellow-500/10" />
 
       {/* Image Carousel */}
       <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8">

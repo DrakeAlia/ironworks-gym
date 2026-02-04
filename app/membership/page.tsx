@@ -21,7 +21,12 @@ import {
 } from "@/components/ui/accordion";
 import CtaSection from "@/components/CtaSection";
 
-export default function Membership() {
+type PageProps = {
+  params: Promise<{ [key: string]: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+};
+
+export default function Membership(_props: PageProps) {
   const premiumPlan = {
     title: "Premium Plan",
     price: "$56.99*",
@@ -65,24 +70,19 @@ export default function Membership() {
 
   const galleryImages = [
     {
-      src: "/images/gym-cardio-area.jpg",
-      alt: "State-of-the-art cardio equipment at Iron Works Gym",
-      label: "Cardio Area",
+      src: "/images/gym-preacher-curl.jpg",
+      alt: "Member performing preacher curls at Iron Works Gym",
+      label: "Training in Action",
     },
     {
-      src: "/images/gym-machine-area.jpg",
-      alt: "Premium weight machines and strength training area",
-      label: "Machine Area",
+      src: "/images/equipment-atlantis-squat.jpg",
+      alt: "Premium Atlantis squat rack equipment at Iron Works Gym",
+      label: "Premium Equipment",
     },
     {
-      src: "/images/gym-entrance-lobby.jpg",
-      alt: "Welcoming entrance and lobby area at Iron Works Gym",
-      label: "Entrance Lobby",
-    },
-    {
-      src: "/images/acility-wide-shot.jpg",
-      alt: "Wide panoramic view of Iron Works Gym facility",
-      label: "The Gym Floor",
+      src: "/images/gym-exterior-wide.jpg",
+      alt: "Iron Works Gym exterior and building location",
+      label: "Our Location",
     },
   ];
 
@@ -107,7 +107,7 @@ export default function Membership() {
       <section className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/acility-wide-shot.jpg"
+            src="/images/facility-wide-shot.jpg"
             alt="Wide view of Iron Works Gym facility"
             fill
             priority
@@ -157,7 +157,7 @@ export default function Membership() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {galleryImages.map((image, index) => (
               <motion.div
                 key={image.src}

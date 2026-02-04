@@ -14,6 +14,11 @@ import {
 import { Separator } from "@/components/ui/separator";
 import CtaSection from "@/components/CtaSection";
 
+type PageProps = {
+  params: Promise<{ [key: string]: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+};
+
 type Trainer = {
   name: string;
   role: string;
@@ -115,7 +120,7 @@ const trainers: Trainer[] = [
   },
 ];
 
-export default function Trainers() {
+export default function Trainers(_props: PageProps) {
   const [loadingImages, setLoadingImages] = useState<Record<string, boolean>>({});
   const [expandedBios, setExpandedBios] = useState<Record<string, boolean>>({});
 
