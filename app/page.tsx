@@ -109,13 +109,15 @@ export default function Home() {
               lifters come to work.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
-              <Link
-                href="/membership"
+              <a
+                href="https://guru.gyminsight.com/join/sxmkOyeKqKn9xy8"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-8 py-4 bg-yellow-500 text-zinc-950 font-semibold rounded-lg hover:bg-yellow-400 transition-all duration-300 hover:shadow-lg hover:shadow-yellow-500/25 text-base sm:text-lg min-h-[44px]"
               >
                 Start Your Journey
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
+              </a>
               <Link
                 href="/about"
                 className="inline-flex items-center justify-center px-8 py-4 border-2 border-yellow-500 text-yellow-500 font-semibold rounded-lg hover:bg-yellow-500/10 transition-all duration-300 text-base sm:text-lg min-h-[44px]"
@@ -390,13 +392,15 @@ export default function Home() {
               are committed to achieving their fitness goals.
             </p>
             <div className="pt-4">
-              <Link
-                href="/membership"
+              <a
+                href="https://guru.gyminsight.com/join/sxmkOyeKqKn9xy8"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-8 py-4 bg-yellow-500 text-zinc-950 font-semibold rounded-lg hover:bg-yellow-400 transition-all duration-300 hover:shadow-lg hover:shadow-yellow-500/25 text-base sm:text-lg min-h-[44px]"
               >
                 Start Your Journey
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
+              </a>
             </div>
           </motion.div>
         </div>

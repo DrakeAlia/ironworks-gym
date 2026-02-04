@@ -100,12 +100,14 @@ export default function Navigation() {
                 </Link>
               );
             })}
-            <Link
-              href="/membership"
+            <a
+              href="https://guru.gyminsight.com/join/sxmkOyeKqKn9xy8"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-6 py-2.5 bg-yellow-500 text-zinc-950 font-semibold rounded-lg hover:bg-yellow-400 transition-all duration-300 hover:shadow-lg hover:shadow-yellow-500/25 min-h-[44px] flex items-center"
             >
               Join Now
-            </Link>
+            </a>
           </div>
 
           {/* Mobile Menu */}
@@ -142,12 +144,14 @@ export default function Navigation() {
                   );
                 })}
                 <SheetClose asChild>
-                  <Link
-                    href="/membership"
+                  <a
+                    href="https://guru.gyminsight.com/join/sxmkOyeKqKn9xy8"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="block px-4 py-3 bg-yellow-500 text-zinc-950 font-semibold rounded-lg text-center hover:bg-yellow-400 transition-all duration-300 hover:shadow-lg hover:shadow-yellow-500/25 min-h-[44px] flex items-center justify-center"
                   >
                     Join Now
-                  </Link>
+                  </a>
                 </SheetClose>
 
                 {/* Mobile Contact Info */}
