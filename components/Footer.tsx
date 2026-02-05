@@ -19,7 +19,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-zinc-400 text-sm mt-4">
-              The Gym That`&apos;`s Not A Health Club.
+              The Gym That's Not A Health Club.
               <br />
               Serving Bellevue since 1974.
             </p>

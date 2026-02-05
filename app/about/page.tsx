@@ -16,7 +16,7 @@ import {
   DialogContent,
   DialogClose,
 } from "@/components/ui/dialog";
-import { X, CheckCircle2 } from "lucide-react";
+import { X, CheckCircle2, Dumbbell, Target, Heart, Award } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Separator } from "@/components/ui/separator";
 import CtaSection from "@/components/CtaSection";
@@ -193,6 +193,10 @@ export default function About(_props: PageProps) {
             transition={{ duration: 0.7 }}
             className="space-y-4 sm:space-y-6"
           >
+            <div className="flex items-center gap-3 mb-2">
+              <Dumbbell className="h-6 w-6 sm:h-7 sm:w-7 text-yellow-500 flex-shrink-0" />
+              <div className="h-px flex-1 bg-gradient-to-r from-yellow-500/30 to-transparent" />
+            </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight">
               About <span className="text-yellow-500">Ironworks Gym</span>
             </h2>
@@ -218,6 +222,10 @@ export default function About(_props: PageProps) {
             transition={{ duration: 0.7 }}
             className="space-y-4 sm:space-y-6"
           >
+            <div className="flex items-center gap-3 mb-2">
+              <Target className="h-6 w-6 sm:h-7 sm:w-7 text-yellow-500 flex-shrink-0" />
+              <div className="h-px flex-1 bg-gradient-to-r from-yellow-500/30 to-transparent" />
+            </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight">
               Supporting <span className="text-yellow-500">Real Goals</span>
             </h2>
@@ -243,6 +251,10 @@ export default function About(_props: PageProps) {
             transition={{ duration: 0.7 }}
             className="space-y-4 sm:space-y-6"
           >
+            <div className="flex items-center gap-3 mb-2">
+              <Heart className="h-6 w-6 sm:h-7 sm:w-7 text-yellow-500 flex-shrink-0" />
+              <div className="h-px flex-1 bg-gradient-to-r from-yellow-500/30 to-transparent" />
+            </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight">
               More Than <span className="text-yellow-500">Workouts</span>
             </h2>
@@ -364,6 +376,10 @@ export default function About(_props: PageProps) {
             transition={{ duration: 0.7 }}
             className="space-y-4 sm:space-y-6"
           >
+            <div className="flex items-center gap-3 mb-2">
+              <Award className="h-6 w-6 sm:h-7 sm:w-7 text-yellow-500 flex-shrink-0" />
+              <div className="h-px flex-1 bg-gradient-to-r from-yellow-500/30 to-transparent" />
+            </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight">
               Our <span className="text-yellow-500">Commitment</span>
             </h2>

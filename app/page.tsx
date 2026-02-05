@@ -232,18 +232,18 @@ export default function Home(_props: PageProps) {
       <Separator className="bg-yellow-500/20" />
 
       {/* Community & Brand Section */}
-      <section className="relative py-24 px-4 sm:px-6 lg:px-8 min-h-[60vh] flex items-center overflow-hidden">
+      <section className="relative w-full min-h-[600px] lg:min-h-[550px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/images/gym-branded-shirt.jpg"
             alt="Iron Works Gym community and culture"
             fill
-            className="object-cover object-[center_35%]"
+            className="object-cover object-center"
             sizes="100vw"
           />
         </div>
-        <div className="absolute inset-0 bg-zinc-950/55" />
-        <div className="relative z-10 max-w-7xl mx-auto w-full">
+        <div className="absolute inset-0 bg-zinc-950/50" />
+        <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -280,18 +280,18 @@ export default function Home(_props: PageProps) {
       <Separator className="bg-yellow-500/20" />
 
       {/* Personal Trainers Section */}
-      <section className="relative py-24 px-4 sm:px-6 lg:px-8 min-h-[60vh] flex items-center overflow-hidden">
+      <section className="relative w-full min-h-[600px] lg:min-h-[550px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/images/trainer-client-shoulders.jpg"
             alt="Personal trainer coaching client at Iron Works Gym"
             fill
-            className="object-cover object-[center_20%]"
+            className="object-cover object-[center_25%]"
             sizes="100vw"
           />
         </div>
-        <div className="absolute inset-0 bg-zinc-950/60" />
-        <div className="relative z-10 max-w-4xl mx-auto text-center w-full">
+        <div className="absolute inset-0 bg-zinc-950/50" />
+        <div className="relative z-10 max-w-4xl mx-auto text-center w-full px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

@@ -21,8 +21,16 @@ export default function CtaSection() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
-              href="tel:+14258836006"
+              href="https://guru.gyminsight.com/join/sxmkOyeKqKn9xy8"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-8 py-4 bg-yellow-500 text-zinc-950 font-semibold rounded-lg hover:bg-yellow-400 transition-all duration-300 hover:shadow-lg hover:shadow-yellow-500/25 text-base sm:text-lg min-h-[44px]"
+            >
+              Join Now
+            </a>
+            <a
+              href="tel:+14258836006"
+              className="inline-flex items-center justify-center px-8 py-4 border-2 border-yellow-500 text-yellow-500 font-semibold rounded-lg hover:bg-yellow-500/10 transition-all duration-300 text-base sm:text-lg min-h-[44px]"
             >
               Call (425) 883-6006
             </a>

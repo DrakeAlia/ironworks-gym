@@ -104,10 +104,10 @@ export default function Membership(_props: PageProps) {
   return (
     <div className="bg-zinc-950">
       {/* Hero Section */}
-      <section className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-[70vh] flex items-center">
         <div className="absolute inset-0">
           <Image
-            src="/images/facility-wide-shot.jpg"
+            src="/images/acility-wide-shot.jpg"
             alt="Wide view of Iron Works Gym facility"
             fill
             priority
@@ -117,7 +117,7 @@ export default function Membership(_props: PageProps) {
         </div>
         <div className="absolute inset-0 bg-zinc-950/80" />
         <div className="absolute inset-0 bg-gradient-to-b from-yellow-500/20 via-transparent to-zinc-950" />
-        <div className="relative z-10 max-w-4xl mx-auto text-center">
+        <div className="relative z-10 max-w-4xl mx-auto text-center w-full">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -207,7 +207,7 @@ export default function Membership(_props: PageProps) {
               <p className="text-zinc-400 text-sm sm:text-base mb-6 leading-relaxed">
                 Monthly dues per member. Family add-on specials available at point of sale.
               </p>
-              <ul className="space-y-4">
+              <ul className="space-y-4 mb-6">
                 {premiumPlan.bullets.map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm sm:text-base text-zinc-300 leading-relaxed">
                     <Check className="h-5 w-5 text-yellow-500 flex-shrink-0 mt-0.5" />
@@ -215,6 +215,15 @@ export default function Membership(_props: PageProps) {
                   </li>
                 ))}
               </ul>
+              <a
+                href="https://guru.gyminsight.com/join/sxmkOyeKqKn9xy8"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-auto inline-flex items-center justify-center px-6 py-3 bg-yellow-500 text-zinc-950 font-semibold rounded-lg hover:bg-yellow-400 transition-all duration-300 hover:shadow-lg hover:shadow-yellow-500/25 text-base min-h-[44px]"
+              >
+                Join Now
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </a>
             </motion.div>
 
             {/* Term Memberships */}
@@ -237,11 +246,20 @@ export default function Membership(_props: PageProps) {
                   </li>
                 ))}
               </ul>
-              <div className="mt-6 space-y-2 text-sm text-yellow-400">
+              <div className="mt-6 mb-6 space-y-2 text-sm text-yellow-400">
                 {termNotes.map((note) => (
                   <p key={note}>{note}</p>
                 ))}
               </div>
+              <a
+                href="https://guru.gyminsight.com/join/sxmkOyeKqKn9xy8"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-auto inline-flex items-center justify-center px-6 py-3 bg-yellow-500 text-zinc-950 font-semibold rounded-lg hover:bg-yellow-400 transition-all duration-300 hover:shadow-lg hover:shadow-yellow-500/25 text-base min-h-[44px]"
+              >
+                Join Now
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </a>
             </motion.div>
           </div>
 

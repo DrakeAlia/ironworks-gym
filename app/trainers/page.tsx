@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Phone, Mail, Quote, Instagram } from "lucide-react";
+import { Phone, Mail, Quote, Instagram, ArrowDown } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import {
@@ -120,9 +120,12 @@ const trainers: Trainer[] = [
   },
 ];
 
+type FilterCategory = "all" | "strength" | "nutrition" | "certified";
+
 export default function Trainers(_props: PageProps) {
   const [loadingImages, setLoadingImages] = useState<Record<string, boolean>>({});
   const [expandedBios, setExpandedBios] = useState<Record<string, boolean>>({});
+  const [activeFilter, setActiveFilter] = useState<FilterCategory>("all");
 
   const handleImageLoad = (trainerName: string) => {
     setLoadingImages((prev) => ({ ...prev, [trainerName]: false }));
@@ -132,12 +135,63 @@ export default function Trainers(_props: PageProps) {
     setExpandedBios((prev) => ({ ...prev, [trainerName]: !prev[trainerName] }));
   };
 
+  const filterCategories = [
+    { id: "all" as FilterCategory, label: "All Trainers" },
+    { id: "strength" as FilterCategory, label: "Strength & Conditioning" },
+    { id: "nutrition" as FilterCategory, label: "Nutrition" },
+    { id: "certified" as FilterCategory, label: "Certified" },
+  ];
+
+  const filterTrainers = (filter: FilterCategory) => {
+    if (filter === "all") return trainers;
+
+    return trainers.filter((trainer) => {
+      if (!trainer.specialty) return false;
+
+      const specialty = trainer.specialty.toLowerCase();
+
+      switch (filter) {
+        case "strength":
+          return specialty.includes("strength") || specialty.includes("conditioning");
+        case "nutrition":
+          return specialty.includes("nutrition");
+        case "certified":
+          return specialty.includes("nasm") || specialty.includes("issa") || specialty.includes("certified");
+        default:
+          return true;
+      }
+    });
+  };
+
+  const filteredTrainers = filterTrainers(activeFilter);
+
+  const scrollToTrainers = () => {
+    const trainerGrid = document.getElementById("trainer-grid");
+    if (trainerGrid) {
+      trainerGrid.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <div className="bg-zinc-950">
       {/* Hero Section */}
-      <section className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-[70vh] flex items-center">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/staff-training-together.jpg"
+            alt="Iron Works Gym trainers"
+            fill
+            priority
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+        </div>
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-zinc-950/90" />
+        {/* Yellow Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-yellow-500/10 via-transparent to-zinc-950" />
-        <div className="relative z-10 max-w-4xl mx-auto text-center">
+        <div className="relative z-10 max-w-4xl mx-auto text-center w-full">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -146,13 +200,20 @@ export default function Trainers(_props: PageProps) {
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white px-4 leading-tight">
               Our <span className="text-yellow-500">Trainers</span>
             </h1>
-            <p className="text-base sm:text-lg md:text-xl text-zinc-300 max-w-3xl mx-auto leading-relaxed px-4">
+            <p className="text-base sm:text-lg md:text-xl text-zinc-300 max-w-3xl mx-auto leading-relaxed px-4 mb-8">
               Our trainers will help you build a safe and efficient workout plan
               to suit your fitness goals. All of our Personal Trainers meet
               nationally recognized certification standards for fitness. Give us
               a call today and let Ironworks help you find the best trainer to
               meet your fitness goals!
             </p>
+            <button
+              onClick={scrollToTrainers}
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-yellow-500 text-zinc-950 font-semibold rounded-lg hover:bg-yellow-400 transition-all duration-300 hover:shadow-lg hover:shadow-yellow-500/25 text-base sm:text-lg min-h-[44px]"
+            >
+              Find Your Trainer
+              <ArrowDown className="h-5 w-5" />
+            </button>
           </motion.div>
         </div>
       </section>
@@ -188,7 +249,7 @@ export default function Trainers(_props: PageProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-zinc-900 border border-yellow-500/30 rounded-3xl overflow-hidden hover:border-yellow-500/50 transition-all hover:shadow-xl hover:shadow-yellow-500/10"
+            className="bg-zinc-900 border border-yellow-500/30 rounded-3xl overflow-hidden transition-all duration-300 hover-card"
           >
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
               <div className="group relative aspect-[3/4] lg:aspect-auto lg:min-h-[650px] overflow-hidden">
@@ -199,7 +260,7 @@ export default function Trainers(_props: PageProps) {
                   src={rohit.image}
                   alt={rohit.name}
                   fill
-                  className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
+                  className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
                   sizes="(min-width: 1024px) 50vw, 100vw"
                   priority
                   onLoad={() => handleImageLoad('rohit')}
@@ -218,15 +279,13 @@ export default function Trainers(_props: PageProps) {
                   </p>
                 )}
                 {rohit.email && (
-                  <div className="flex items-center gap-3 text-zinc-300">
-                    <Mail className="h-5 w-5 text-yellow-500" />
-                    <a
-                      href={`mailto:${rohit.email}`}
-                      className="hover:text-yellow-400 transition-colors text-lg break-all"
-                    >
-                      {rohit.email}
-                    </a>
-                  </div>
+                  <a
+                    href={`mailto:${rohit.email}`}
+                    className="flex items-center gap-3 text-zinc-300 hover:text-yellow-400 transition-colors text-base sm:text-lg break-all min-h-[44px] -mx-2 px-2 rounded"
+                  >
+                    <Mail className="h-5 w-5 text-yellow-500 flex-shrink-0" />
+                    <span>{rohit.email}</span>
+                  </a>
                 )}
               </div>
             </div>
@@ -242,7 +301,7 @@ export default function Trainers(_props: PageProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-zinc-900 border border-yellow-500/30 rounded-3xl overflow-hidden hover:border-yellow-500/50 transition-all hover:shadow-xl hover:shadow-yellow-500/10"
+            className="bg-zinc-900 border border-yellow-500/30 rounded-3xl overflow-hidden transition-all duration-300 hover-card"
           >
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
               <div className="group relative aspect-[3/4] lg:aspect-auto lg:min-h-[650px] overflow-hidden">
@@ -253,7 +312,7 @@ export default function Trainers(_props: PageProps) {
                   src={timEnnis.image}
                   alt={timEnnis.name}
                   fill
-                  className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
+                  className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
                   sizes="(min-width: 1024px) 50vw, 100vw"
                   onLoad={() => handleImageLoad('timEnnis')}
                 />
@@ -276,15 +335,13 @@ export default function Trainers(_props: PageProps) {
                   </div>
                 )}
                 {timEnnis.phone && (
-                  <div className="flex items-center gap-3 text-zinc-300">
-                    <Phone className="h-5 w-5 text-yellow-500" />
-                    <a
-                      href={`tel:${timEnnis.phone.replace(/-/g, "")}`}
-                      className="hover:text-yellow-400 transition-colors text-lg"
-                    >
-                      {timEnnis.phone}
-                    </a>
-                  </div>
+                  <a
+                    href={`tel:${timEnnis.phone.replace(/-/g, "")}`}
+                    className="flex items-center gap-3 text-zinc-300 hover:text-yellow-400 transition-colors text-base sm:text-lg min-h-[44px] -mx-2 px-2 rounded"
+                  >
+                    <Phone className="h-5 w-5 text-yellow-500 flex-shrink-0" />
+                    <span>{timEnnis.phone}</span>
+                  </a>
                 )}
               </div>
             </div>
@@ -293,19 +350,77 @@ export default function Trainers(_props: PageProps) {
       </section>
 
       {/* Trainers Grid */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-zinc-900/40">
+      <section id="trainer-grid" className="py-24 px-4 sm:px-6 lg:px-8 bg-zinc-900/40">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {trainers.map((trainer, index) => (
-              <motion.div
-                key={trainer.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ scale: 1.02 }}
-                className="group bg-zinc-900 border border-yellow-500/20 rounded-2xl overflow-hidden hover:border-yellow-500/60 transition-all hover:shadow-lg hover:shadow-yellow-500/10 flex flex-col md:min-h-[600px]"
+          {/* Filter Tabs */}
+          <div className="mb-8">
+            <div className="overflow-x-auto overflow-y-hidden scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
+              <div className="flex gap-3 min-w-min pb-2">
+                {filterCategories.map((category) => (
+                  <motion.button
+                    key={category.id}
+                    onClick={() => setActiveFilter(category.id)}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className={`px-6 py-3 rounded-lg font-semibold text-sm sm:text-base whitespace-nowrap transition-all duration-300 min-h-[44px] ${
+                      activeFilter === category.id
+                        ? "bg-yellow-500 text-zinc-950 shadow-lg shadow-yellow-500/25"
+                        : "bg-zinc-900 text-zinc-300 border border-yellow-500/20 hover:border-yellow-500/40 hover:text-yellow-400"
+                    }`}
+                  >
+                    {category.label}
+                  </motion.button>
+                ))}
+              </div>
+            </div>
+
+            {/* Results count */}
+            <motion.p
+              key={activeFilter}
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-zinc-400 text-sm mt-4"
+            >
+              Showing {filteredTrainers.length} {filteredTrainers.length === 1 ? "trainer" : "trainers"}
+            </motion.p>
+          </div>
+
+          {filteredTrainers.length === 0 ? (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-center py-16 px-4"
+            >
+              <p className="text-zinc-400 text-lg mb-4">No trainers found in this category.</p>
+              <button
+                onClick={() => setActiveFilter("all")}
+                className="px-6 py-3 bg-yellow-500 text-zinc-950 font-semibold rounded-lg hover:bg-yellow-400 transition-all duration-300 min-h-[44px]"
               >
+                View All Trainers
+              </button>
+            </motion.div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredTrainers.map((trainer, index) => {
+                const isLastItem = index === filteredTrainers.length - 1;
+                const totalItems = filteredTrainers.length;
+                // Center last card if it's alone on desktop (3 cols) or tablet (2 cols)
+                const isAloneOnDesktop = totalItems % 3 === 1 && isLastItem;
+                const isAloneOnTablet = totalItems % 2 === 1 && isLastItem;
+
+                return (
+                  <motion.div
+                    key={trainer.name}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    className={`group bg-zinc-900 border border-yellow-500/20 rounded-2xl overflow-hidden transition-all duration-300 flex flex-col md:min-h-[600px] hover-card ${
+                      isAloneOnTablet ? "md:col-start-1 md:col-end-2 md:mx-auto md:max-w-md lg:col-start-auto lg:col-end-auto lg:max-w-none" : ""
+                    } ${
+                      isAloneOnDesktop ? "lg:col-start-2 lg:col-end-3" : ""
+                    }`}
+                  >
                 <div className="relative aspect-[3/4] w-full overflow-hidden">
                   {loadingImages[trainer.name] !== false && (
                     <Skeleton className="absolute inset-0" />
@@ -314,7 +429,7 @@ export default function Trainers(_props: PageProps) {
                     src={trainer.image}
                     alt={trainer.name}
                     fill
-                    className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
+                    className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
                     sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                     onLoad={() => handleImageLoad(trainer.name)}
                   />
@@ -339,13 +454,13 @@ export default function Trainers(_props: PageProps) {
                   )}
                   {trainer.bio && (
                     <div className="mb-4">
-                      <p className={`text-zinc-300 leading-relaxed text-sm ${expandedBios[trainer.name] ? '' : 'line-clamp-3'}`}>
+                      <p className={`text-zinc-300 leading-relaxed text-sm sm:text-base ${expandedBios[trainer.name] ? '' : 'line-clamp-3'}`}>
                         {trainer.bio}
                       </p>
                       {trainer.bio.length > 150 && (
                         <button
                           onClick={() => toggleBio(trainer.name)}
-                          className="text-yellow-500 hover:text-yellow-400 text-sm font-semibold mt-2 transition-colors"
+                          className="text-yellow-500 hover:text-yellow-400 text-sm sm:text-base font-semibold mt-2 transition-colors min-h-[44px] -mx-2 px-2 rounded inline-flex items-center"
                         >
                           {expandedBios[trainer.name] ? 'Show less' : 'Read more'}
                         </button>
@@ -406,8 +521,10 @@ export default function Trainers(_props: PageProps) {
                   </div>
                 </div>
               </motion.div>
-            ))}
-          </div>
+                );
+              })}
+            </div>
+          )}
         </div>
       </section>
 
@@ -416,7 +533,7 @@ export default function Trainers(_props: PageProps) {
       {/* Gym Gallery Section */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-zinc-950">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
                 src: "/images/gym-floor-alternate.jpg",
@@ -445,7 +562,7 @@ export default function Trainers(_props: PageProps) {
                   alt={image.alt}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
-                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/60 to-transparent" />
               </motion.div>
