@@ -63,6 +63,7 @@ export default function Membership(_props: PageProps) {
       title: "Cancellation Policy",
       content: [
         "AFT memberships: cancellation is accepted only if you either come in person and sign off on your membership card, or send a signed and dated handwritten letter stating your cancellation.",
+        "1-year term memberships can be cancelled in person or over the phone.",
         "No cash refunds. Please retain confirmation of your cancellation request.",
       ],
     },
