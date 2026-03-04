@@ -117,6 +117,7 @@ const trainers: Trainer[] = [
     phone: "512-529-7234",
     bio: "I specialize in body composition, strength, and long-term health for adults with demanding schedules. My work centers on efficient training, sustainable nutrition, and clear accountability&mdash;delivering measurable results without burnout. I focus on simple, repeatable systems that help clients build muscle, lose fat, and maintain progress over time.",
     specialty: "Body Composition & Strength",
+    instagram: "https://www.instagram.com/nickaesthetictraining",
   },
 ];
 
