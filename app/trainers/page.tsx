@@ -99,11 +99,6 @@ const trainers: Trainer[] = [
     image: "/images/trainers/Iron Works-nick.jpg",
   },
   {
-    name: "Caleb Beck",
-    role: "Trainer",
-    image: "/images/trainers/Iron Works-caleb.jpg",
-  },
-  {
     name: "Gabe",
     role: "Trainer",
     image: "/images/trainers/Iron Works-gabe.jpg",
