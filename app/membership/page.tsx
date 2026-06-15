@@ -27,26 +27,35 @@ type PageProps = {
 };
 
 export default function Membership(_props: PageProps) {
-  const premiumPlan = {
-    title: "Premium Plan",
-    price: "$56.99*",
-    subtitle: "Monthly Memberships / Monthly Dues",
+  const monthToMonthPlan = {
+    title: "Month-to-Month",
+    price: "$64.99/mo",
+    subtitle: "No Contract",
     bullets: [
-      "No initiation fees with a 5-month agreement",
-      "*Special at point of sale. Family member add-on price.",
+      "Activation fee: $24.99",
+      "Family add-on: $54.99/person",
+      "Plus Washington State sales tax @ 10.3%",
+    ],
+  };
+
+  const fiveMonthPlan = {
+    title: "Monthly (6-Month Agreement)",
+    price: "$56.99/mo",
+    subtitle: "6-Month Commitment",
+    bullets: [
+      "No activation fee with 6-month agreement",
+      "Family add-on: $46.99/person",
       "Plus Washington State sales tax @ 10.3%",
     ],
   };
 
   const termMemberships = [
     { label: "1 Day", price: "$20.00" },
-    { label: "1 Month", price: "$95.00" },
-    { label: "3 Months", price: "$229.00" },
-    { label: "1 Year", price: "$489.00*" },
+    { label: "1 Year", price: "$499.00" },
   ];
 
   const termNotes = [
-    "*Annual renewal rate after one year $439.00",
+    "Annual renewal rate: $449.00",
     "Plus Washington State sales tax @ 10.3%",
   ];
 
@@ -54,17 +63,16 @@ export default function Membership(_props: PageProps) {
     {
       title: "Membership Pause Policy",
       content: [
-        "AFT (month-to-month) memberships can be paused for a maximum of two months and only once per membership.",
+        "Month-to-Month memberships can be paused for a maximum of two months and only once per membership.",
         "1-year term memberships can be paused for at least two months.",
-        "No pauses can be issued for 1- or 3-month term memberships.*",
+        "Monthly memberships can be paused after the agreement term is complete.",
       ],
     },
     {
       title: "Cancellation Policy",
       content: [
-        "AFT memberships: cancellation is accepted only if you either come in person and sign off on your membership card, or send a signed and dated handwritten letter stating your cancellation.",
-        "1-year term memberships can be cancelled in person or over the phone.",
-        "No cash refunds. Please retain confirmation of your cancellation request.",
+        "Month-to-Month memberships must be cancelled 7 days prior to the billing date.",
+        "Monthly memberships must be cancelled before the 20th of the current month.",
       ],
     },
   ];
@@ -190,9 +198,9 @@ export default function Membership(_props: PageProps) {
 
       {/* Pricing Plans */}
       <section className="py-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-stretch">
-            {/* Premium Plan */}
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+            {/* Month-to-Month Plan */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -201,15 +209,44 @@ export default function Membership(_props: PageProps) {
               className="bg-zinc-900 border border-yellow-500/30 rounded-2xl p-6 sm:p-8 shadow-xl shadow-yellow-500/10 flex flex-col"
             >
               <p className="text-xs uppercase tracking-[0.3em] text-yellow-400 mb-3">
-                {premiumPlan.subtitle}
+                {monthToMonthPlan.subtitle}
               </p>
-              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">{premiumPlan.title}</h3>
-              <p className="text-4xl sm:text-5xl font-extrabold text-yellow-400 mb-6">{premiumPlan.price}</p>
-              <p className="text-zinc-400 text-sm sm:text-base mb-6 leading-relaxed">
-                Monthly dues per member. Family add-on specials available at point of sale.
+              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">{monthToMonthPlan.title}</h3>
+              <p className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-yellow-400 mb-6">{monthToMonthPlan.price}</p>
+              <ul className="space-y-4 mb-6 flex-grow">
+                {monthToMonthPlan.bullets.map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-sm sm:text-base text-zinc-300 leading-relaxed">
+                    <Check className="h-5 w-5 text-yellow-500 flex-shrink-0 mt-0.5" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <a
+                href="https://guru.gyminsight.com/join/sxmkOyeKqKn9xy8"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-auto inline-flex items-center justify-center px-6 py-3 bg-yellow-500 text-zinc-950 font-semibold rounded-lg hover:bg-yellow-400 transition-all duration-300 hover:shadow-lg hover:shadow-yellow-500/25 text-base min-h-[44px]"
+              >
+                Join Now
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </a>
+            </motion.div>
+
+            {/* 5-Month Agreement Plan */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="bg-zinc-900 border border-yellow-500/30 rounded-2xl p-6 sm:p-8 shadow-xl shadow-yellow-500/10 flex flex-col"
+            >
+              <p className="text-xs uppercase tracking-[0.3em] text-yellow-400 mb-3">
+                {fiveMonthPlan.subtitle}
               </p>
-              <ul className="space-y-4 mb-6">
-                {premiumPlan.bullets.map((item) => (
+              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">{fiveMonthPlan.title}</h3>
+              <p className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-yellow-400 mb-6">{fiveMonthPlan.price}</p>
+              <ul className="space-y-4 mb-6 flex-grow">
+                {fiveMonthPlan.bullets.map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm sm:text-base text-zinc-300 leading-relaxed">
                     <Check className="h-5 w-5 text-yellow-500 flex-shrink-0 mt-0.5" />
                     <span>{item}</span>
@@ -232,14 +269,14 @@ export default function Membership(_props: PageProps) {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
               className="bg-zinc-900 border border-yellow-500/30 rounded-2xl p-6 sm:p-8 shadow-xl shadow-yellow-500/10 flex flex-col"
             >
               <p className="text-xs uppercase tracking-[0.3em] text-yellow-400 mb-3">
-                Term Memberships / Gym
+                Term Memberships
               </p>
-              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6">Short & Long Terms</h3>
-              <ul className="divide-y divide-yellow-500/10">
+              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6">Day & Annual</h3>
+              <ul className="divide-y divide-yellow-500/10 flex-grow">
                 {termMemberships.map((term) => (
                   <li key={term.label} className="flex items-center justify-between py-4 min-h-[44px]">
                     <span className="text-base sm:text-lg text-zinc-300 font-medium">{term.label}</span>
@@ -274,7 +311,7 @@ export default function Membership(_props: PageProps) {
           >
             <div className="bg-zinc-900/50 border border-yellow-500/30 rounded-xl p-6 text-center space-y-6">
               <p className="text-zinc-300 text-sm sm:text-base leading-relaxed">
-                <span className="text-yellow-400 font-semibold">Note:</span> Term memberships available for purchase online or in-person. Monthly memberships available for purchase in-person.
+                <span className="text-yellow-400 font-semibold">Note:</span> Day pass is available for purchase in-club only.
               </p>
               <Link
                 href="https://guru.gyminsight.com/join/sxmkOyeKqKn9xy8"
